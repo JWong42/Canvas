@@ -1,0 +1,2 @@
+class CanvasesController < ApplicationController
+end
