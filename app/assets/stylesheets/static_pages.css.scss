@@ -1,0 +1,141 @@
+@import "bootstrap"; 
+
+/* universal */ 
+
+html { 
+  overflow-y: scroll; 
+} 
+
+body { 
+  padding-top: 30px; 
+} 
+
+/* header */ 
+
+#logo { 
+  float: left; 
+  margin-right: 10px; 
+  color: #fff; 
+  text-transform: uppercase; 
+  letter-spacing: -1px; 
+  padding-top: 9px; 
+  font-size: 1.7em;  
+  font-weight: bold; 
+  line-height: 1; 
+} 
+
+#logo:hover { 
+  color: #fff; 
+  text-decoration: none; 
+} 
+
+/* intro */ 
+
+div.intro { 
+  background: white; 
+  height: 300px; 
+  margin-top: 50px; 
+  border-radius: 30px; 
+  -webkit-border-radius: 30px; 
+  -moz-border-radius: 30px; 
+  position: relative; 
+} 
+
+div.intro-content { 
+  width: 500px; 
+  text-align: left; 
+  margin-left: 60px; 
+}
+
+div.intro-content a {
+  margin-top: 20px; 
+} 
+
+div.canvas-intro { 
+  position: absolute; 
+  top: 20px; 
+  right: 0;  
+  margin-right: 60px; 
+  height: 259px; 
+  width: 350px; 
+  border: 2px solid black; 
+  overflow: hidden; 
+  box-shadow: 5px 5px 3px #191919; 
+} 
+
+h1.intro { 
+  font-size: 70px; 
+  letter-spacing: -1px; 
+  line-height: 1.2; 
+  color: black; 
+  padding-top: 30px; 
+  padding-bottom: 10px; 
+  text-shadow: 2px 2px 2px #333; 
+} 
+
+p.intro { 
+  font-size: 18px; 
+  line-height: 24px; 
+} 
+
+div.main-content { 
+  position: relative; 
+} 
+
+div.main-content span { 
+  color: #40a6c4; 
+} 
+
+div.features { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  margin-top: 40px; 
+  margin-left: 20px; 
+  text-align: center; 
+  font-weight: bold; 
+} 
+
+div.testimonials { 
+  //background: blue; 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  margin-top: 40px; 
+  text-align: center; 
+  font-weight: bold; 
+} 
+
+/* main */ 
+
+div.main { 
+  background: url('brushed_alu.png'); 
+  height: 800px; 
+  padding-bottom: 10px; 
+  position: relative; 
+} 
+
+/* outro */ 
+
+div.outro { 
+  // background: url('brushed_alu.png') repeat-x; 
+  background: #191919; 
+  position: absolute; 
+  bottom: 0; 
+  height: 150px; 
+  width: 100%; 
+} 
+
+/* footer */ 
+
+footer { 
+  background: black; 
+  height: 60px; 
+} 
+
+footer div.copyright { 
+  color: white; 
+  width: 350px; 
+  margin: 0  auto; 
+  padding-top: 25px; 
+} 

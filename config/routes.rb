@@ -1,6 +1,9 @@
 BusinessModelCanvas::Application.routes.draw do
 
-  root :to => 'canvases#index'
+  root :to => 'static_pages#home'
+
+  resources :users 
+  resources :canvases 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
