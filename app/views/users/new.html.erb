@@ -1,0 +1,28 @@
+<div class="container"> 
+  <div class="row">
+  <div class="span6 offset3">
+  <h1 class="signup">Sign Up</h1> 
+  <div class="signup">
+  <%= form_for @user do |f| %> 
+
+    <%= f.label :first_name %> 
+    <%= f.text_field :first_name %> 
+ 
+    <%= f.label :last_name %> 
+    <%= f.text_field :last_name %> 
+    <%= f.label :email %> 
+    <%= f.text_field :email %> 
+
+    <%= f.label :password %> 
+    <%= f.password_field :password %> 
+
+    <%= f.label :password_confirmation, "Confirmation" %> 
+    <%= f.password_field :password_confirmation %> 
+
+    <%= f.submit "Create my account", class: "btn btn-info" %> 
+
+  <% end %> 
+  </div> 
+  </div> 
+</div>
+</div>
