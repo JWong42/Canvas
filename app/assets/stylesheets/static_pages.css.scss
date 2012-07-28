@@ -139,7 +139,7 @@ footer div.copyright {
   padding-top: 25px; 
 }  
 
-/* forms */ 
+/* signup form */ 
 
 h1.signup { 
   text-align: center; 
@@ -163,4 +163,8 @@ form.new_user {
 input { 
   width: 300px; 
   display: block; 
+} 
+
+div#error_explanation { 
+  margin-top: 20px; 
 } 
