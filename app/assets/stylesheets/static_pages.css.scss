@@ -31,7 +31,7 @@ body {
 
 /* intro */ 
 
-div.intro, div.signup { 
+div.intro, div.signup, div.signin { 
   background: white; 
   height: 300px; 
   margin-top: 50px; 
@@ -139,20 +139,14 @@ footer div.copyright {
   padding-top: 25px; 
 }  
 
-/* signup form */ 
+/* form */ 
 
-h1.signup { 
+h1.form { 
   text-align: center; 
   margin-top: 30px; 
 }
 
-div.signup { 
-  position: relative; 
-  height: 350px; 
-  margin-top: 20px; 
-}
-
-form.new_user { 
+form.new_user, form.new_session { 
   width: 310px; 
   position: absolute; 
   left: 50%; 
@@ -168,3 +162,20 @@ input {
 div#error_explanation { 
   margin-top: 20px; 
 } 
+
+/* signup form */ 
+
+div.signup { 
+  position: relative; 
+  height: 350px; 
+  margin-top: 20px; 
+}
+ 
+/* signin form */
+
+div.signin { 
+  position: relative; 
+  height: 200px; 
+  margin-top: 20px; 
+}
+ 

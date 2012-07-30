@@ -3,9 +3,12 @@ BusinessModelCanvas::Application.routes.draw do
   root :to => 'static_pages#home'
 
   resources :users 
+  resources :sessions,  only: [:new, :create, :destroy]
   resources :canvases 
 
   match '/signup' => 'users#new'
+  match '/signin' => 'sessions#new'
+  match '/signout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
