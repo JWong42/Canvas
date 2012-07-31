@@ -1,6 +1,8 @@
 class Canvas < ActiveRecord::Base
   # attr_accessible :title, :body
-  has_many :users
+  has_many :ownerships
+  has_many :users, through: :ownerships 
+
   has_many :problems 
   has_many :customer_segments
   has_many :unique_value_propositions

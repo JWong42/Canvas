@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728073214) do
+ActiveRecord::Schema.define(:version => 20120731071126) do
 
   create_table "canvases", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(:version => 20120728073214) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "ownerships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "canvas_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "ownerships", ["canvas_id"], :name => "index_ownerships_on_canvas_id"
+  add_index "ownerships", ["user_id", "canvas_id"], :name => "index_ownerships_on_user_id_and_canvas_id", :unique => true
+  add_index "ownerships", ["user_id"], :name => "index_ownerships_on_user_id"
 
   create_table "problems", :force => true do |t|
     t.string   "content"
