@@ -3,4 +3,7 @@ class Ownership < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :canvans
+
+  validates  :user_id, presence: true
+  validates  :canvas_id, presence: true
 end

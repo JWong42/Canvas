@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
-  has_many :ownerships
+  has_many :ownerships, dependent: :destroy
   has_many :canvases, through: :ownerships 
+
+  has_many :collaborations, dependent: :destroy 
+  has_many :collaborators, through: :collaborations
 
   has_secure_password # use bcrypt for password encryption and makes authenticate method available
 
