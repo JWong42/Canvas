@@ -158,16 +158,22 @@ div.content-area {
 
   h3 {
     margin-left: 40px; 
+    // margin-right: 750px; 
     padding-top: 20px; 
+    // border-bottom: 1px solid #e5e5e5; 
   } 
 
-  div.empty-canvases { 
+  div.canvases { 
     margin-left: 40px; 
-    margin-top: 10px; 
+    margin-top: 15px; 
+  } 
+
+  li {
+    // border: 1px solid black; 
+    list-style-type: none; 
+    margin-left: -23px; 
   } 
 }   
-
-
 
 /* form */ 
 

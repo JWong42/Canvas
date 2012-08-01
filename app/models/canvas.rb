@@ -1,5 +1,6 @@
 class Canvas < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :name
+
   has_many :ownerships
   has_many :users, through: :ownerships 
 

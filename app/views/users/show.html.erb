@@ -3,12 +3,21 @@
   <div class="content-area"> 
     <h3>Your Canvases</h3> 
       <% if @canvases.empty? %> 
-        <div class="empty-canvases"> 
+        <div class="canvases"> 
           <p>There are no existing canvases owned by you. Create one now to get started.</p> 
+          <%= link_to "Create Canvas", '#', class: "btn btn-info" %> 
+        </div> 
+      <% else %> 
+        <div class="canvases"> 
+          <ol> 
+            <% @canvases.each do |canvas| %> 
+              <li><%= canvas.name %></li>
+            <% end %> 
+          </ol> 
         </div> 
       <% end %> 
     <h3>Shared Canvases</h3> 
-      <div class="empty-canvases">
+      <div class="canvases">
         <p>You don't have any canvases shared with you currently.<p/> 
       </div> 
   </div> 
