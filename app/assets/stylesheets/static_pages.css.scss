@@ -29,6 +29,13 @@ body {
   text-decoration: none; 
 } 
 
+/* typography */ 
+
+h1.form, h1.dashboard { 
+  text-align: center; 
+  margin-top: 25px; 
+}
+
 /* intro */ 
 
 div.intro, div.signup, div.signin { 
@@ -78,11 +85,11 @@ p.intro {
   line-height: 24px; 
 } 
 
-div.main-content { 
+div.home-content { 
   position: relative; 
 } 
 
-div.main-content span { 
+div.home-content span { 
   color: #40a6c4; 
 } 
 
@@ -97,7 +104,6 @@ div.features {
 } 
 
 div.testimonials { 
-  //background: blue; 
   position: absolute; 
   top: 0; 
   right: 0; 
@@ -137,14 +143,33 @@ footer div.copyright {
   width: 350px; 
   margin: 0  auto; 
   padding-top: 25px; 
-}  
+}
+
+/* main content area */ 
+
+div.content-area { 
+  background: white; 
+  margin-top: 20px; 
+  border-radius: 30px; 
+  -webkit-border-radius: 30px; 
+  -moz-border-radius: 30px; 
+  position: relative; 
+  height: 600px; 
+
+  h3 {
+    margin-left: 40px; 
+    padding-top: 20px; 
+  } 
+
+  div.empty-canvases { 
+    margin-left: 40px; 
+    margin-top: 10px; 
+  } 
+}   
+
+
 
 /* form */ 
-
-h1.form { 
-  text-align: center; 
-  margin-top: 30px; 
-}
 
 form.new_user, form.new_session { 
   width: 310px; 

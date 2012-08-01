@@ -12,4 +12,6 @@ class Canvas < ActiveRecord::Base
   has_many :cost_structure
   has_many :key_metrics
   has_many :unfair_advantages
+
+  validates :name, presence: true 
 end
