@@ -36,6 +36,15 @@ h1.form, h1.dashboard {
   margin-top: 25px; 
 }
 
+/* alert */ 
+
+div.alert.alert-success {
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: -10px; 
+  padding-left: 35px; 
+} 
+
 /* intro */ 
 
 div.intro, div.signup, div.signin { 
@@ -248,4 +257,4 @@ div.signin {
   height: 200px; 
   margin-top: 20px; 
 }
- 
+

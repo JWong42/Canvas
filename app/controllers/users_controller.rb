@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user]) 
     if @user.save
+      flash[:success] = "Welcome!"
       redirect_to root_path 
     else
       render 'new'
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
   def update 
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
+      flash[:success] = "Profile updated" 
       redirect_to @user 
     else
       render 'edit'
