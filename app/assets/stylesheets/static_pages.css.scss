@@ -177,6 +177,13 @@ div.content-area {
 
   div.canvases-main { 
     width: 470px; 
+    // position: relative; 
+
+    a { 
+      float: right; 
+      margin-top: 25px; 
+      margin-right: 20px; 
+    } 
  
     div.canvases { 
       margin-left: 18px; 
