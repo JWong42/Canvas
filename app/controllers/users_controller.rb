@@ -22,10 +22,17 @@ class UsersController < ApplicationController
     @canvases = @user.canvases 
   end 
 
-  private 
-
-  def has_canvases? 
-   
+  def edit 
+    @user = User.find(params[:id])
+  end 
+ 
+  def update 
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to @user 
+    else
+      render 'edit'
+    end 
   end 
 
 end

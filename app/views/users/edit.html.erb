@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+  <div class="span6 offset3">
+  <h1 class="form">Update Your Profile</h1>
+  <%= render 'shared/error_messages'%>
+  <div class="signup">
+  <%= form_for @user do |f| %>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Save changes", class: "btn btn-info" %>
+
+  <% end %>
+  </div>
+  </div>
+</div>
+</div>
