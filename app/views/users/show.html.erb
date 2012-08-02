@@ -3,8 +3,21 @@
   <h1 class="dashboard">Dashboard</h1> 
   <div class="content-area"> 
     <div class="canvases-main">
-      <a href="#" class="btn btn-info">Create new</a> 
-      <h3>Your Canvases</h3> 
+      <a href="#myModal" class="new btn btn-info" data-toggle="modal">Create new</a> 
+        <div class="modal hide fade" id="myModal">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Please enter a name</h3>
+          </div>
+          <div class="modal-body">
+            <p>body</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+            <a href="#" class="btn btn-primary">Save</a>
+          </div>
+        </div>
+      <h3 class="header">Your Canvases</h3> 
       <% if @canvases.empty? %> 
         <div class="canvases"> 
           <p class="notice">There are no existing canvases owned by you. Create one now to get started.</p> 
@@ -31,12 +44,12 @@
           </ol> 
         </div> 
       <% end %> 
-      <h3>Shared Canvases</h3> 
+      <h3 class="header">Shared Canvases</h3> 
       <div class="canvases">
         <p class="notice">You don't have any canvases shared with you currently.<p/> 
       </div> 
       <div class="feeds">
-        <h3>Activity Feeds</h3>
+        <h3 class="header">Activity Feeds</h3>
       </div>
     </div> 
   </div> 
