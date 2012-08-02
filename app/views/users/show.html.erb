@@ -4,21 +4,33 @@
     <h3>Your Canvases</h3> 
       <% if @canvases.empty? %> 
         <div class="canvases"> 
-          <p>There are no existing canvases owned by you. Create one now to get started.</p> 
+          <p class="notice">There are no existing canvases owned by you. Create one now to get started.</p> 
           <%= link_to "Create Canvas", '#', class: "btn btn-info" %> 
         </div> 
       <% else %> 
         <div class="canvases"> 
           <ol> 
             <% @canvases.each do |canvas| %> 
-              <li><%= canvas.name %></li>
+              <div class="canvas">
+                <div class="canvas-info">
+                  <li><%= canvas.name %></li>
+                  <p>Last updated - <%= time_ago_in_words canvas.updated_at %> ago</p> 
+                </div> 
+                <div class="canvas-options">
+                  <ul>
+                    <li><i class="icon-edit"></i>Edit Name</li>
+                    <li><i class="icon-remove"></i>Delete Canvas</li>
+                    <li><i class="icon-plus"></i>Add Collaborators</li>
+                  </ul>
+                </div> 
+              </div>
             <% end %> 
           </ol> 
         </div> 
       <% end %> 
     <h3>Shared Canvases</h3> 
       <div class="canvases">
-        <p>You don't have any canvases shared with you currently.<p/> 
+        <p class="notice">You don't have any canvases shared with you currently.<p/> 
       </div> 
   </div> 
 </div> 

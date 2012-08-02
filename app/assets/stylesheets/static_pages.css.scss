@@ -158,21 +158,60 @@ div.content-area {
 
   h3 {
     margin-left: 40px; 
-    // margin-right: 750px; 
-    padding-top: 20px; 
-    // border-bottom: 1px solid #e5e5e5; 
+    padding-top: 25px; 
+
   } 
 
   div.canvases { 
-    margin-left: 40px; 
-    margin-top: 15px; 
+    margin-left: 18px; 
+    margin-top: 15px;  
+    width: 500px;
+    margin-bottom: -30px; 
+ 
+    p.notice { 
+      margin-left: 23px; 
+    }   
   } 
 
   li {
     // border: 1px solid black; 
     list-style-type: none; 
-    margin-left: -23px; 
-  } 
+    // margin-left: -23px; 
+  }
+
+  div.canvas { 
+    border: 1px solid black; 
+    height: 55px; 
+    margin-bottom: 30px; 
+    margin-right: 70px; 
+    padding: 10px;
+    position: relative; 
+
+   div.canvas-info { 
+   
+     li { 
+       font-weight: bold; 
+     } 
+ 
+     p { 
+       display: inline; 
+       margin: 0px; 
+       font-size: 10px; 
+     } 
+
+   } 
+
+    div.canvas-options { 
+      position: absolute; 
+      top: 10px; 
+      right: 15px; 
+
+      i { 
+        padding-right: 5px; 
+      } 
+    } 
+
+  }  
 }   
 
 /* form */ 
