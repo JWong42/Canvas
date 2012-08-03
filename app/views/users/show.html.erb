@@ -10,18 +10,17 @@
             <h3>Please enter a name.</h3>
           </div>
           <div class="modal-body">
-            <input name="create-canvas" type="text" value="My Canvas"></input>
+            <input class="new" type="text"></input>
           </div>
           <div class="modal-footer">
             <a href="#" class="btn" data-dismiss="modal">Close</a>
-            <a href="#" class="btn btn-info">Save</a>
+            <a href="#" class="save btn btn-info">Save</a>
           </div>
         </div>
       <h3 class="header">Your Canvases</h3> 
       <% if @canvases.empty? %> 
         <div class="canvases"> 
           <p class="notice">There are no existing canvases owned by you. Create one now to get started.</p> 
-          <%= link_to "Create Canvas", '#', class: "btn btn-info" %> 
         </div> 
       <% else %> 
         <div class="canvases"> 
@@ -45,7 +44,7 @@
         </div> 
       <% end %> 
       <h3 class="header">Shared Canvases</h3> 
-      <div class="canvases">
+      <div class="canvases2">
         <p class="notice">You don't have any canvases shared with you currently.<p/> 
       </div> 
       <div class="feeds">

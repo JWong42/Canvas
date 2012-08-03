@@ -11,4 +11,43 @@ jQuery ($) ->
         -($(this).height() / 2)
       'margin-left': ->
         -($(this).width() / 2) 
+    console.log('hello')
+    $('input.new').val('My Canvas')
 
+  $('input.new').on 
+    "focus": (e) -> 
+      console.log('hi')
+      $(@).val('')
+    #"blur": -> 
+      #$(@).val('My Canvas')
+
+  $('a.save').on 
+    'click': -> 
+      console.log('hey')
+      $('#myModal').modal('hide')
+      $.ajax 
+        url: "/canvases"
+        type: "POST"
+        data: 
+          canvas: 
+            name: $("input.new").val() 
+        success: (data) -> 
+          console.log(data.name)
+          $('div.canvases p.notice').hide()
+          $('div.canvases').prepend("
+            <ol> 
+              <div class='canvas'>
+                <div class='canvas-info'>
+                  <li> #{data.name} </li>
+                  <p>Last updated - last than a minute ago</p> 
+                </div> 
+                <div class='canvas-options'>
+                  <ul>
+                    <li><i class='icon-edit'></i>Edit Name</li>
+                    <li><i class='icon-remove'></i>Delete Canvas</li>
+                    <li><i class='icon-plus'></i>Add Collaborators</li>
+                  </ul>
+                </div> 
+              </div>
+            </ol> 
+          ")

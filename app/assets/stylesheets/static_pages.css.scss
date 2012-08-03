@@ -163,7 +163,7 @@ div.content-area {
   -webkit-border-radius: 30px; 
   -moz-border-radius: 30px; 
   position: relative; 
-  height: 600px; 
+  // height: 600px; 
 
   h3.header {
     margin-left: 40px; 
@@ -184,7 +184,7 @@ div.content-area {
       margin-right: 20px; 
     } 
  
-    div.canvases { 
+    div.canvases, div.canvases2 { 
       margin-left: 18px; 
       margin-top: 15px;  
       width: 500px;
@@ -192,6 +192,8 @@ div.content-area {
  
       p.notice { 
         margin-left: 23px; 
+        margin-bottom: 20px; 
+        width: 450px; 
       }   
 
       div.canvas { 
@@ -227,6 +229,14 @@ div.content-area {
 
         } 
       } 
+    } 
+  
+    div.canvases2 { 
+
+      p.notice { 
+        height: 300px; 
+      } 
+
     } 
   } 
 
