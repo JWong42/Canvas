@@ -38,14 +38,14 @@ jQuery ($) ->
             <ol> 
               <div class='canvas'>
                 <div class='canvas-info'>
-                  <li> #{data.name} </li>
+                  <li><a href='#'>#{data.name}</a></li>
                   <p>Last updated - last than a minute ago</p> 
                 </div> 
                 <div class='canvas-options'>
                   <ul>
-                    <li><i class='icon-edit'></i>Edit Name</li>
-                    <li><i class='icon-remove'></i>Delete Canvas</li>
-                    <li><i class='icon-plus'></i>Add Collaborators</li>
+                    <li><a href='#' class='edit'><i class='icon-edit'></i>Edit Name</a></li>
+                    <li><a href='#' class='delete'><i class='icon-remove'></i>Delete Canvas</a></li>
+                    <li><a href='#' ><i class='icon-plus'></i>Add Collaborators</a></li>
                   </ul>
                 </div> 
               </div>
