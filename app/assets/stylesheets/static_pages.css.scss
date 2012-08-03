@@ -204,6 +204,10 @@ div.content-area {
         padding: 10px;
         position: relative; 
 
+        &:hover { 
+          background: #eef7fa; 
+        } 
+
         div.canvas-info { 
    
           li { 
