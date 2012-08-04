@@ -198,10 +198,11 @@ div.content-area {
 
       div.canvas { 
         border: 1px solid black; 
-        height: 55px; 
+        height: 60px; 
         margin-bottom: 30px; 
         margin-right: 70px; 
-        padding: 10px;
+        padding: 10px; 
+        padding-top: 15px; 
         position: relative; 
 
         &:hover { 
@@ -210,8 +211,24 @@ div.content-area {
 
         div.canvas-info { 
    
-          li { 
+          li.edit { 
             font-weight: bold; 
+        
+            input { 
+              margin-bottom: 2px; 
+              width: 200px; 
+              height: 10px; 
+            } 
+ 
+            a.edit-save { 
+              margin-left: 140px; 
+              margin-right: 5px; 
+            } 
+
+            a.edit-save, a.edit-cancel { 
+              font-size: 12px; 
+            } 
+          
           } 
  
           p { 
@@ -224,7 +241,7 @@ div.content-area {
 
         div.canvas-options { 
           position: absolute; 
-          top: 10px; 
+          top: 15px; 
           right: 15px; 
 
           i { 
