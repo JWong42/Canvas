@@ -38,7 +38,7 @@ h1.form, h1.dashboard {
 
 /* alert */ 
 
-div.alert.alert-success {
+div.alert-success, div.alert-error, div.alert-notice {
   text-align: center; 
   margin-top: 20px; 
   margin-bottom: -10px; 

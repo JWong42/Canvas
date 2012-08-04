@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
   <div class="span6 offset3">
+  <%= render 'shared/flash_messages' %>
   <h1 class="form">Sign In</h1>
   <div class="signin">
   <%= form_tag({action: 'create'}, class: 'new_session') do |f| %>

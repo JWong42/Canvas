@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_filter :signed_in_user, only: [:show, :edit, :update] 
+  before_filter :correct_user,   only: [:show, :edit, :update]
+
   def index 
 
   end 
@@ -35,6 +38,13 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end 
+  end 
+
+  private 
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to root_path unless @user == current_user 
   end 
 
 end
