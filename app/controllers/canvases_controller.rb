@@ -21,4 +21,9 @@ class CanvasesController < ApplicationController
     end 
   end 
 
+  def destroy
+    Canvas.find(params[:id]).delete 
+    render :json => { :text => 'ok' } 
+  end 
+
 end
