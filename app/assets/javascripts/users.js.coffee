@@ -88,5 +88,9 @@ jQuery ($) ->
         url: link
         type: "DELETE"
         success: (data) -> 
-          canvas = $(item).parents().find('div.canvas')[0]
+          canvases = $(item).parents().find('div.canvas')
+          canvas = canvases[0]
           $(canvas).hide()
+          if data.count is 0 
+            $('div.canvases').prepend('<p class="notice">There are no existing canvases owned by you.  Create one now to get started.</p>')
+            

@@ -23,7 +23,8 @@ class CanvasesController < ApplicationController
 
   def destroy
     Canvas.find(params[:id]).delete 
-    render :json => { :text => 'ok' } 
+    @canvas_count = Canvas.all.count
+    render :json => { :text => 'ok', :count => @canvas_count } 
   end 
 
 end
