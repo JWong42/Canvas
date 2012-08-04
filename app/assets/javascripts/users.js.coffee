@@ -78,3 +78,15 @@ jQuery ($) ->
         e.preventDefault()
         $(item).html(beforeValue)
 
+  $('a.delete').live 
+    'click': (e) -> 
+      e.preventDefault()
+      item = $(@).parents().find('li.edit')[0]
+      a = $(item).html()
+      link = $(a).attr('href')
+      $.ajax
+        url: link
+        type: "DELETE"
+        success: (data) -> 
+          canvas = $(item).parents().find('div.canvas')[0]
+          $(canvas).hide()
