@@ -20,9 +20,13 @@ jQuery ($) ->
       #$(@).val('My Canvas')
 
   $('a.save').on 
-    'click': -> 
+    'click': (e) -> 
+      e.preventDefault()
+      link = $(location).attr('href')
+      re = link.match(/[\d]+$/)
+      user_id = re[0]
       $.ajax 
-        url: "/canvases"
+        url: "/users/#{user_id}/canvases"
         type: "POST"
         data: 
           canvas: 
@@ -36,7 +40,7 @@ jQuery ($) ->
               <ol> 
                 <div class='canvas'>
                   <div class='canvas-info'>
-                    <li class='edit'><a href='/canvases/#{data.id}'>#{data.name}</a></li>
+                    <li class='edit'><a href='/users/#{user_id}/canvases/#{data.id}'>#{data.name}</a></li>
                     <p>Last updated - last than a minute ago</p> 
                   </div> 
                   <div class='canvas-options'>

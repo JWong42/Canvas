@@ -1,6 +1,9 @@
 class CanvasesController < ApplicationController
 
-  def new 
+  before_filter :signed_in_user
+  #before_filter :correct_user  
+
+  def index 
   end 
 
   def create

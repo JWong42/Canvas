@@ -2,59 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table.canvas { 
-  height: 505px; 
-  width: 1150px; 
-  margin: 0 auto; 
-  border-collapse: collapse; // borders in table won't have space between them
-}
-td.area { 
-  border: 2px solid black; 
+h1.canvas { 
   text-align: center; 
+  position: relative; 
+  top: 25px; 
 } 
 
-td#problem { 
-  height: 66%; 
-  width: 20%; 
+div#canvas-table { 
+  position: relative; 
+  top: 45px; 
+
+  table.canvas { 
+    background: white; 
+    height: 500px; 
+    width: 900px; 
+    margin: 0 auto;  
+    border-collapse: collapse; // borders in table won't have space between them
+
+    td.area { 
+      border: 2px solid black; 
+      text-align: center; 
+
+    } 
+
+    td#problem { 
+      height: 66%; 
+      width: 20%; 
+    }
+
+    td#key_activities { 
+      height: 33%; 
+      width: 20%; 
+    }
+
+    td#unique_value_proposition { 
+      height: 66%; 
+      width: 20%; 
+    } 
+
+    td#unfair_advantage { 
+      height: 33%; 
+      width: 20%; 
+    }
+
+    td#customer_segments { 
+      height: 66%; 
+      width: 20%; 
+    } 
+
+    td#key_merics { 
+      height: 33%; 
+      width: 20%; 
+    }
+
+    td#channels { 
+      height: 33%; 
+      width: 20%; 
+    }
+
+    td#cost_structure { 
+      height: 33%; 
+      width: 50%; 
+    }
+
+    td#revenue_streams { 
+      height: 33%; 
+      width: 50%; 
+    } 
+
+  } 
 } 
-
-td#key_activities { 
-  height: 33%; 
-  width: 20%; 
-} 
-
-td#unique_value_proposition { 
-  height: 66%; 
-  width: 20%; 
-} 
-
-td#unfair_advantage { 
-  height: 33%; 
-  width: 20%; 
-}
-
-td#customer_segments { 
-  height: 66%; 
-  width: 20%; 
-} 
-
-td#key_merics { 
-  height: 33%; 
-  width: 20%; 
-}
-
-td#channels { 
-  height: 33%; 
-  width: 20%; 
-}
-
-td#cost_structure { 
-  height: 33%; 
-  width: 50%; 
-}
-
-td#revenue_streams { 
-  height: 33%; 
-  width: 50%; 
-}
 
