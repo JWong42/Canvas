@@ -1,31 +1,33 @@
 <%= render 'shared/flash_messages' %>
 <h1 class="canvas">Canvas</h1>
 <div class="canvas-extra">
-  <div class="canvas-name"><p>Name: <span class="name"><%= @canvas.name  %></span></p></div>
-  <div class="labels">
-      <p>Labels:</p> 
-      <div class="hypothesis"><div class="box" id="blue"><span>hypothesis<span></div></div>
-      <div class="validated"><div class="box" id="green"><span>validated</span></div></div>
-      <div class="invalidated"><div class="box" id="red"><span>invalidated</span></div></div>
+  <div class="canvas-extra-container">
+    <div class="canvas-name"><p>Name: <span class="name"><%= @canvas.name  %></span></p></div>
+    <div class="labels">
+        <p>Labels:</p> 
+        <div class="hypothesis"><div class="box"><span>hypothesis<span></div></div>
+        <div class="validated"><div class="box"><span>validated</span></div></div>
+        <div class="invalidated"><div class="box"><span>invalidated</span></div></div>
+    </div>
   </div>
 </div> 
 <div id="canvas-table"> 
   <table class="canvas"> 
     <tbody>
       <tr> 
-        <td class="area" id="problem" rowspan="2">Problem</td>
-        <td class="area" id="key_activities">Key Activities</td> 
-        <td class="area" id="unique_value_proposition" colspan="2" rowspan="2">Unique Value Proposition</td>
-        <td class="area" id="unfair_advantage">Unfair Advantage</td>
-        <td class="area" id="customer_segments" rowspan="2">Customer Segments</td>
+        <td class="area" id="problem" rowspan="2"><div class="header"><h4>Problem</h4></div>1</td>
+        <td class="area" id="key_activities"><div class="header"><h4>Key Activities<h4></div>5</td> 
+        <td class="area" id="unique_value_proposition" colspan="2" rowspan="2"><div class="header"><h4>Unique Value Proposition</h4></div>3</td>
+        <td class="area" id="unfair_advantage"><div class="header"><h4>Unfair Advantage</h4></div>9</td>
+        <td class="area" id="customer_segments" rowspan="2"><div class="header"><h4>Customer Segments</h4></div>2</td>
       </tr> 
       <tr> 
-        <td class="area" id="key_metrics">Key Metrics</td>
-        <td class="area" id="channels">Channels</td>
+        <td class="area" id="key_metrics"><div class="header"><h4>Key Metrics</h4></div>8</td>
+        <td class="area" id="channels"><div class="header"><h4>Channels</h4></div>4</td>
       </tr> 
       <tr> 
-        <td class="area" id="cost_structure" colspan="3">Cost Structure</td>
-        <td class="area" id="revenue_streams" colspan="3">Revenue Streams</td>
+        <td class="area" id="cost_structure" colspan="3"><div class="header"><h4>Cost Structure</h4></div>7</td>
+        <td class="area" id="revenue_streams" colspan="3"><div class="header"><h4>Revenue Streams</h4></div>6</td>
       </tr> 
     </tbody>
   </table>
