@@ -1,8 +1,13 @@
 <%= render 'shared/flash_messages' %>
 <h1 class="canvas">Canvas</h1>
 <div class="canvas-extra">
-<p>Name:</p>
-<p>Label:</p>
+  <div class="canvas-name"><p>Name: <span class="name"><%= @canvas.name  %></span></p></div>
+  <div class="labels">
+      <p>Labels:</p> 
+      <div class="hypothesis"><div class="box" id="blue"><span>hypothesis<span></div></div>
+      <div class="validated"><div class="box" id="green"><span>validated</span></div></div>
+      <div class="invalidated"><div class="box" id="red"><span>invalidated</span></div></div>
+  </div>
 </div> 
 <div id="canvas-table"> 
   <table class="canvas"> 

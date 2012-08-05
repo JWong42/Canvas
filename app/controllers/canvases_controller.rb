@@ -15,6 +15,10 @@ class CanvasesController < ApplicationController
     end 
   end 
 
+  def show 
+    @canvas = Canvas.find(params[:id]) 
+  end 
+
   def update 
     @canvas = Canvas.find(params[:id])
     if @canvas.update_attributes(name: params[:name])

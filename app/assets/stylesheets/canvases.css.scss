@@ -8,6 +8,66 @@ h1.canvas {
   top: 25px; 
 } 
 
+div.canvas-extra { 
+  position: relative; 
+  top: 45px; 
+
+  div.canvas-name { 
+  position: relative; 
+  left: 100px; 
+ 
+    span.name { 
+      font-weight: bold; 
+      text-shadow: 0 1px 1px #FFF; 
+      color: #40a6c4; 
+    } 
+  } 
+
+  div.labels { 
+    font-size: 12px; 
+    position: absolute; 
+    top: 0; 
+    left: 660px; 
+    width: 300px;
+  
+    p { 
+      position: relative; 
+      left: 20px; 
+    } 
+ 
+    div.box { 
+      height: 20px; 
+      width: 20px; 
+    
+      span { 
+        padding-left: 25px; 
+      } 
+    } 
+
+    div.hypothesis { 
+      background: #40a6c4; 
+      position: absolute; 
+      top: 0; 
+      left: 72px; 
+    } 
+
+    div.validated { 
+      background: #61dc3f; 
+      position: absolute; 
+      top: 0; 
+      left: 160px; 
+    } 
+
+    div.invalidated { 
+      background: red; 
+      position: absolute; 
+      top: 0; 
+      left: 240px; 
+    } 
+
+  } 
+} 
+
 div#canvas-table { 
   position: relative; 
   top: 45px; 
