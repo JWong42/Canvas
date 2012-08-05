@@ -90,6 +90,10 @@ div#canvas-table {
       border: 2px solid black; 
       text-align: center; 
       position: relative; 
+ 
+      &:hover { 
+        background: #eef7fa; 
+      } 
 
       div.header { 
         position: absolute; 
