@@ -63,6 +63,7 @@ jQuery ($) ->
       e.stopPropagation()
       e.preventDefault() 
       $(@).closest('.item-insert').hide()
-      $('td.area').on 'click', insertInput
+      $(@).closest('td.area').on 'click', insertInput
+      #$('td.area').on 'click', insertInput
       
 
