@@ -1,0 +1,2 @@
+module CostStructuresHelper
+end

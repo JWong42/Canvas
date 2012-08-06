@@ -1,0 +1,2 @@
+module UnfairAdvantagesHelper
+end

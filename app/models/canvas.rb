@@ -10,7 +10,7 @@ class Canvas < ActiveRecord::Base
   has_many :key_activities
   has_many :channels
   has_many :revenue_streams
-  has_many :cost_structure
+  has_many :cost_structures
   has_many :key_metrics
   has_many :unfair_advantages
 

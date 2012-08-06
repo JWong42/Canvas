@@ -41,6 +41,19 @@
             <h4>Key Activities<h4>
           </div>
            <div class="items" id="three">
+            <ul>
+              <% @canvas.key_activities.each do |key_activity| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= key_activity.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           5
         </td> 
@@ -49,6 +62,19 @@
             <h4>Unique Value Propositions</h4>
           </div>
           <div class="items" id="one">
+            <ul>
+              <% @canvas.unique_value_propositions.each do |uvp| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= uvp.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           3
         </td>
@@ -57,6 +83,19 @@
             <h4>Unfair Advantages</h4>
           </div>
           <div class="items" id="three">
+            <ul>
+              <% @canvas.unfair_advantages.each do |unfair_advantage| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= unfair_advantage.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           9
         </td>
@@ -65,6 +104,19 @@
             <h4>Customer Segments</h4>
           </div>
           <div class="items" id="three">
+            <ul>
+              <% @canvas.customer_segments.each do |customer_segment| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= customer_segment.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           2
         </td>
@@ -75,6 +127,19 @@
             <h4>Key Metrics</h4>
           </div>
           <div class="items" id="three">
+            <ul>
+              <% @canvas.key_metrics.each do |key_metric| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= key_metric.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           8
         </td>
@@ -83,6 +148,19 @@
             <h4>Channels</h4>
           </div>
           <div class="items" id="three">
+            <ul>
+              <% @canvas.channels.each do |channel| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= channel.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           4
         </td>
@@ -93,6 +171,19 @@
             <h4>Cost Structures</h4>
           </div>
           <div class="items" id="two">
+            <ul>
+              <% @canvas.cost_structures.each do |cost_structure| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= cost_structure.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           7
         </td>
@@ -101,6 +192,19 @@
             <h4>Revenue Streams</h4>
           </div>
           <div class="items" id="two">
+            <ul>
+              <% @canvas.revenue_streams.each do |revenue_stream| %> 
+                <div class="item-container">
+                  <div class="item">
+                    <li><%= revenue_stream.content %></li>
+                  </div>
+                  <div class="item-options">
+                    <i class="icon-tag"></i>
+                    <i class="icon-remove"></i>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
           </div>
           6
         </td>

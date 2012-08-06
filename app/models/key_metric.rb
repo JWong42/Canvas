@@ -1,4 +1,4 @@
-class KeyMetrics < ActiveRecord::Base
+class KeyMetric < ActiveRecord::Base
   attr_accessible :content
   belongs_to :canvas
 end
