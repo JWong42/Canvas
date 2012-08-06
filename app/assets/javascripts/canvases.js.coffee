@@ -54,7 +54,7 @@ jQuery ($) ->
                 </div>
               </ul>
             ")
-            $('td.area').on 'click', insertInput
+            $(@).closest('td.area').on 'click', insertInput
       else 
         $(inputField).effect('highlight')
         
@@ -64,6 +64,5 @@ jQuery ($) ->
       e.preventDefault() 
       $(@).closest('.item-insert').hide()
       $(@).closest('td.area').on 'click', insertInput
-      #$('td.area').on 'click', insertInput
       
 

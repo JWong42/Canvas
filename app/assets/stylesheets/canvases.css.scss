@@ -104,9 +104,7 @@ div#canvas-table {
 
 
       div.items { 
-        //background: blue; 
         width: 165px; 
-        //width: 300px; 
         position: absolute; 
         top: 37px;
         margin-left: 10px; 
@@ -143,9 +141,14 @@ div#canvas-table {
         } 
 
         div.item-container {
+          height: 20px; 
           width: 165px; 
           position: relative; 
           left: -25px; 
+
+          &:hover { 
+            background: white; 
+          } 
  
           div.item { 
             width: 132px; 
@@ -154,12 +157,7 @@ div#canvas-table {
               color: #3ba1bf; 
               list-style-type: none; 
               text-align: left; 
-              margin-bottom: 2px; 
-
-              &:hover {  
-                background: white; 
-              }
-               
+              margin-bottom: 7px; 
             } 
           } 
 
@@ -173,19 +171,33 @@ div#canvas-table {
             } 
 
           } 
-
         } 
       } 
 
       div#one { 
         top: 53px; 
+
+        div.item-container { 
+          width: 158px; 
+        } 
       } 
  
       div#two { 
-        width: 424px; 
+        width: 428px; 
+        
+        div.item-container { 
+          width: 428px; 
+        } 
+
       } 
-     
- 
+
+      div.items.b { 
+
+        div.item-container { 
+          width: 157px; 
+        } 
+      } 
+
     } 
 
     td#problem { 
