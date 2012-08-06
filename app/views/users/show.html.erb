@@ -28,7 +28,7 @@
             <% @canvases.each do |canvas| %> 
               <div class="canvas">
                 <div class="canvas-info">
-                  <li class="edit"><%= link_to canvas.name, [@user, canvas] %></a></li>
+                  <li class="edit"><%= link_to canvas.name, [@user, canvas] %></li>
                   <p>Last updated - <%= time_ago_in_words canvas.updated_at %> ago</p> 
                 </div> 
                 <div class="canvas-options">

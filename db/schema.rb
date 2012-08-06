@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801062158) do
+ActiveRecord::Schema.define(:version => 20120805123234) do
 
   create_table "canvases", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120801062158) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "collaborations", :force => true do |t|
@@ -40,24 +41,28 @@ ActiveRecord::Schema.define(:version => 20120801062158) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "customer_segments", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "key_activities", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "key_metrics", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "ownerships", :force => true do |t|
@@ -75,24 +80,28 @@ ActiveRecord::Schema.define(:version => 20120801062158) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "revenue_streams", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "unfair_advantages", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "unique_value_propositions", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "canvas_id"
   end
 
   create_table "users", :force => true do |t|

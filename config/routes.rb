@@ -3,7 +3,17 @@ BusinessModelCanvas::Application.routes.draw do
   root :to => 'static_pages#home'
 
   resources :users do 
-    resources :canvases 
+    resources :canvases do 
+      resources :channels
+      resources :cost_structures
+      resources :customer_segments
+      resources :key_activities
+      resources :key_metrics
+      resources :problems
+      resources :revenue_streams
+      resources :unfair_advantages
+      resources :unique_value_propositions
+    end 
   end 
   resources :sessions,  only: [:new, :create, :destroy]
 
