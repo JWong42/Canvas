@@ -161,7 +161,6 @@ div#canvas-table {
             width: 132px; 
 
             li  { 
-              color: #3ba1bf; 
               list-style-type: none; 
               text-align: left; 
               width: 137px; 
@@ -170,7 +169,7 @@ div#canvas-table {
 
           div.item-options { 
             position: absolute; 
-            top: 0; 
+            top: 2px;
             right: 0; 
             display: none; 
 

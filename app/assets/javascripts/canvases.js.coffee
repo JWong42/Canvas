@@ -46,10 +46,10 @@ jQuery ($) ->
               <ul>
                 <div class='item-container'>
                   <div class='item'>
-                    <li data-id=#{data.text}>#{content}</li>
+                    <li style='color: #{data.color}' data-id=#{data.text}>#{content}</li>
                   </div>
                   <div class='item-options'>
-                    <i class='icon-tag'></i>
+                   <a href='#' class='switch-color'><i class='icon-tag'></i></a>
                     <a href='#' class='remove-item'><i class='icon-remove'></i></a>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ jQuery ($) ->
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault()
-      console.log('hi')
+      console.log('for item content edit')
     'mouseenter': (e) ->   
       e.stopPropagation()
       e.preventDefault()
@@ -96,9 +96,9 @@ jQuery ($) ->
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault()
-      id = $(@).closest('div.item-container').find('li').attr('data-id')
       baseLink = $(location).attr('href')
       canvasComponent = $(@).closest('td.area').attr('id')
+      id = $(@).closest('div.item-container').find('li').attr('data-id')
       link = "#{baseLink}/#{canvasComponent}/#{id}"
       $.ajax 
         url: link 
@@ -106,5 +106,29 @@ jQuery ($) ->
         success: (data) => 
           console.log(data.text)
           $(@).closest('.item-container').hide()
-    '.remove-item'
+    'a.remove-item'
+
+  $('div.items').on 
+    'click': (e) -> 
+      e.stopPropagation()
+      e.preventDefault()
+      baseLink = $(location).attr('href')
+      canvasComponent = $(@).closest('td.area').attr('id')
+      id = $(@).closest('div.item-container').find('li').attr('data-id')
+      link = "#{baseLink}/#{canvasComponent}/#{id}" 
+      style = $(@).closest('.item-container').find('li').attr('style')
+      re = style.match(/#[a-z0-9]+$/)
+      color = re[0]     
+      newColor = switch color 
+        when '#3ba1bf' then '#61dc3f'
+        when '#61dc3f' then '#ff0000'
+        when '#ff0000' then '#3ba1bf'
+      $.ajax 
+        url: link 
+        type: 'PUT'
+        data: 
+          style: newColor
+        success: (data) => 
+          $(@).closest('div.item-container').find('li').attr("style", "color: #{newColor}")
+    'a.switch-color'
 
