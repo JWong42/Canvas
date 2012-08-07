@@ -45,11 +45,11 @@ jQuery ($) ->
               <ul>
                 <div class='item-container'>
                   <div class='item'>
-                    <li>#{content}</li>
+                    <li data-id=#{data.text}>#{content}</li>
                   </div>
                   <div class='item-options'>
                     <i class='icon-tag'></i>
-                    <i class='icon-remove'></i>
+                    <a href='#' class='remove-item'><i class='icon-remove'></i></a>
                   </div>
                 </div>
               </ul>
@@ -65,4 +65,39 @@ jQuery ($) ->
       $(@).closest('.item-insert').hide()
       $(@).closest('td.area').on 'click', insertInput
       
+  $('div.item').delegate 'li', 
+    'click': (e) -> 
+      e.stopPropagation()
+      e.preventDefault()
+      #beforeValue = $(@).html()
+      #console.log(beforeValue) 
+      #$(@).html('<input type="text"></input>')
+      #$(@).append('<a href="#" class="edit-save">Save</a><a href="#" class="edit-cancel">Cancel</a>')
 
+  $('div.items').delegate '.remove-item', 
+    'click': (e) -> 
+      e.stopPropagation()
+      e.preventDefault()
+      id = $(@).closest('div.item-container').find('li').attr('data-id')
+      baseLink = $(location).attr('href')
+      canvasComponent = $(@).closest('td.area').attr('id')
+      link = "#{baseLink}/#{canvasComponent}/#{id}"
+      $.ajax 
+        url: link 
+        type: 'DELETE'
+        success: (data) => 
+          console.log(data.text)
+          $(@).closest('.item-container').hide()
+
+  
+  #$('div.items').delegate ".remove-item", 
+    #"click": (e) -> 
+      #e.stopPropagation()
+      #e.preventDefault()
+      
+  #$('div.item-container').on 'click', '.remove-item', (e) -> 
+      #e.stopPropagation()
+      #e.preventDefault()
+      #alert('hey')
+
+  

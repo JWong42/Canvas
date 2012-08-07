@@ -108,18 +108,24 @@ div#canvas-table {
         position: absolute; 
         top: 37px;
         margin-left: 10px; 
+ 
+
+        input { 
+          height: 12px; 
+          width: 125px; 
+        } 
 
         div.item-insert  { 
           position: relative; 
 
           input.one { 
             height: 12px; 
-            width: 155px; 
+            width: 148px; 
           } 
   
           input.two { 
             height: 12px; 
-            width: 415px; 
+            width: 420px; 
           }
 
           input.three { 
@@ -145,6 +151,7 @@ div#canvas-table {
           width: 165px; 
           position: relative; 
           left: -25px; 
+          margin-bottom: 8px; 
 
           &:hover { 
             background: white; 
@@ -157,7 +164,7 @@ div#canvas-table {
               color: #3ba1bf; 
               list-style-type: none; 
               text-align: left; 
-              margin-bottom: 7px; 
+              width: 137px; 
             } 
           } 
 
@@ -179,6 +186,19 @@ div#canvas-table {
 
         div.item-container { 
           width: 158px; 
+
+          li { 
+            width: 130px; 
+          } 
+
+        } 
+
+        a.new-save { 
+          right: 48px; 
+        } 
+
+        a.new-cancel { 
+          margin-right: 8px; 
         } 
       } 
  
@@ -187,17 +207,42 @@ div#canvas-table {
         
         div.item-container { 
           width: 428px; 
-        } 
 
+          li { 
+            width: 400px; 
+          } 
+
+        } 
       } 
 
       div.items.b { 
 
         div.item-container { 
           width: 157px; 
+
+          div.item li { 
+            width: 130px; 
+          } 
+
+        } 
+  
+
+        div.item-insert { 
+
+          input.three { 
+            width: 150px; 
+          } 
+  
+          a.new-save { 
+            right: 45px; 
+          } 
+     
+          a.new-cancel { 
+            margin-right: 5px; 
+          } 
+
         } 
       } 
-
     } 
 
     td#problem { 

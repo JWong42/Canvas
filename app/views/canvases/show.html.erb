@@ -24,11 +24,11 @@
               <% @canvas.problems.each do |problem| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= problem.content %></li>
+                    <li data-id=<%= problem.id %>><%= problem.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -45,11 +45,11 @@
               <% @canvas.key_activities.each do |key_activity| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= key_activity.content %></li>
+                    <li data-id=<%= key_activity.id %>><%= key_activity.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -66,11 +66,11 @@
               <% @canvas.unique_value_propositions.each do |uvp| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= uvp.content %></li>
+                    <li data-id=<%= uvp.id %>><%= uvp.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -87,11 +87,11 @@
               <% @canvas.unfair_advantages.each do |unfair_advantage| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= unfair_advantage.content %></li>
+                    <li data-id=<%= unfair_advantage.id %>><%= unfair_advantage.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                  <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -108,11 +108,11 @@
               <% @canvas.customer_segments.each do |customer_segment| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= customer_segment.content %></li>
+                    <li data-id=<%= customer_segment.id %>><%= customer_segment.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -131,11 +131,11 @@
               <% @canvas.key_metrics.each do |key_metric| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= key_metric.content %></li>
+                    <li data-id=<%= key_metric.id %>><%= key_metric.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -152,11 +152,11 @@
               <% @canvas.channels.each do |channel| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= channel.content %></li>
+                    <li data-id=<%= channel.id %>><%= channel.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -175,11 +175,11 @@
               <% @canvas.cost_structures.each do |cost_structure| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= cost_structure.content %></li>
+                    <li data-id=<%= cost_structure.id %>><%= cost_structure.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -196,11 +196,11 @@
               <% @canvas.revenue_streams.each do |revenue_stream| %> 
                 <div class="item-container">
                   <div class="item">
-                    <li><%= revenue_stream.content %></li>
+                    <li data-id=<%= revenue_stream.id %>><%= revenue_stream.content %></li>
                   </div>
                   <div class="item-options">
                     <i class="icon-tag"></i>
-                    <i class="icon-remove"></i>
+                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
