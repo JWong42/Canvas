@@ -18,13 +18,14 @@ jQuery ($) ->
 
   $('td.area').on 'click', insertInput 
 
-  $('div.items').delegate 'input', 
+  $('div.items').on 
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault() 
       $(@).val('')
+    'input'
 
-  $('td.area').delegate 'a.new-save', 
+  $('td.area').on 
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault() 
@@ -57,24 +58,41 @@ jQuery ($) ->
             $(@).closest('td.area').on 'click', insertInput
       else 
         $(inputField).effect('highlight')
+    'a.new-save'
         
-  $('div.items').delegate 'a.new-cancel', 
+  $('div.items').on 
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault() 
       $(@).closest('.item-insert').hide()
       $(@).closest('td.area').on 'click', insertInput
+    'a.new-cancel'
       
-  $('div.item').delegate 'li', 
+  $('div.items'). on 
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault()
+      console.log('hi')
+    'mouseenter': (e) ->   
+      e.stopPropagation()
+      e.preventDefault()
+      $(@).find('.item-options').css('display', 'inline')
+    'mouseleave': (e) -> 
+      e.stopPropagation()
+      e.preventDefault() 
+      $(@).find('.item-options').css('display', 'none')
+    '.item-container'
+
+  #$('div.item').delegate 'li', 
+    #'click': (e) -> 
+      #e.stopPropagation()
+      #e.preventDefault()
       #beforeValue = $(@).html()
       #console.log(beforeValue) 
       #$(@).html('<input type="text"></input>')
       #$(@).append('<a href="#" class="edit-save">Save</a><a href="#" class="edit-cancel">Cancel</a>')
 
-  $('div.items').delegate '.remove-item', 
+  $('div.items').on  
     'click': (e) -> 
       e.stopPropagation()
       e.preventDefault()
@@ -88,16 +106,5 @@ jQuery ($) ->
         success: (data) => 
           console.log(data.text)
           $(@).closest('.item-container').hide()
+    '.remove-item'
 
-  
-  #$('div.items').delegate ".remove-item", 
-    #"click": (e) -> 
-      #e.stopPropagation()
-      #e.preventDefault()
-      
-  #$('div.item-container').on 'click', '.remove-item', (e) -> 
-      #e.stopPropagation()
-      #e.preventDefault()
-      #alert('hey')
-
-  
