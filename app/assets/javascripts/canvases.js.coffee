@@ -49,8 +49,8 @@ jQuery ($) ->
                     <li style='color: #{data.color}' data-id=#{data.text}>#{content}</li>
                   </div>
                   <div class='item-options'>
-                   <a href='#' class='switch-color'><i class='icon-tag'></i></a>
-                    <a href='#' class='remove-item'><i class='icon-remove'></i></a>
+                    <a href='#' rel='tooltip' title='Change label' class='switch-color'><i class='icon-tag'></i></a>
+                    <a href='#' rel='tooltip' title='Delete item' class='remove-item'><i class='icon-remove'></i></a>
                   </div>
                 </div>
               </ul>
@@ -106,6 +106,10 @@ jQuery ($) ->
         success: (data) => 
           console.log(data.text)
           $(@).closest('.item-container').hide()
+    'mouseenter': (e) -> 
+      $(@).tooltip('show')
+    'mouseleave': (e) -> 
+      $(@).tooltip('hide')
     'a.remove-item'
 
   $('div.items').on 
@@ -130,5 +134,9 @@ jQuery ($) ->
           style: newColor
         success: (data) => 
           $(@).closest('div.item-container').find('li').attr("style", "color: #{newColor}")
+    'mouseenter': (e) -> 
+      $(@).tooltip('show')
+    'mouseleave': (e) -> 
+      $(@).tooltip('hide')
     'a.switch-color'
 

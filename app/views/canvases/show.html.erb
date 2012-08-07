@@ -4,7 +4,7 @@
   <div class="canvas-extra-container">
     <div class="canvas-name"><p>Name: <span class="name"><%= @canvas.name  %></span></p></div>
     <div class="tags">
-        <p>Tags:</p> 
+        <p>Labels:</p> 
         <div class="hypothesis"><div class="box"><span>hypothesis<span></div></div>
         <div class="validated"><div class="box"><span>validated</span></div></div>
         <div class="invalidated"><div class="box"><span>invalidated</span></div></div>
@@ -27,8 +27,8 @@
                     <li style="color: <%= problem.tag_color %>" data-id=<%= problem.id %>><%= problem.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -48,8 +48,8 @@
                     <li style="color: <%= key_activity.tag_color %>" data-id=<%= key_activity.id %>><%= key_activity.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -69,8 +69,8 @@
                     <li style="color: <%= uvp.tag_color %>" data-id=<%= uvp.id %>><%= uvp.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -90,8 +90,8 @@
                     <li style="color: <%= unfair_advantage.tag_color %>" data-id=<%= unfair_advantage.id %>><%= unfair_advantage.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                  <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                  <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -111,8 +111,8 @@
                     <li style="color: <%= customer_segment.tag_color %>" data-id=<%= customer_segment.id %>><%= customer_segment.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -134,8 +134,8 @@
                     <li style="color: <%= key_metric.tag_color %>" data-id=<%= key_metric.id %>><%= key_metric.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -155,8 +155,8 @@
                     <li style="color: <%= channel.tag_color %>" data-id=<%= channel.id %>><%= channel.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -178,8 +178,8 @@
                     <li style="color: <%= cost_structure.tag_color %>" data-id=<%= cost_structure.id %>><%= cost_structure.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -199,8 +199,8 @@
                     <li style="color: <%= revenue_stream.tag_color %>" data-id=<%= revenue_stream.id %>><%= revenue_stream.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
