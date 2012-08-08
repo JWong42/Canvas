@@ -34,12 +34,17 @@ div.canvas-extra {
       position: absolute; 
       top: 0; 
       right: 0; 
-      width: 330px;
-  
-      p { 
-        position: relative; 
-        left: 25px; 
-      } 
+      width: 300px;
+ 
+      a { 
+        color: inherit; 
+        text-decoration: none; 
+
+        p { 
+          width: 43px; 
+        } 
+      }  
+      
  
       div.box { 
         height: 20px; 
@@ -54,30 +59,42 @@ div.canvas-extra {
         background: #40a6c4; 
         position: absolute; 
         top: 0; 
-        left: 72px; 
+        left: 50px; 
       } 
 
       div.validated { 
         background: #61dc3f; 
         position: absolute; 
         top: 0; 
-        left: 160px; 
+        left: 140px; 
       } 
 
       div.invalidated { 
         background: red; 
         position: absolute; 
         top: 0; 
-        left: 240px; 
+        left: 220px; 
       } 
 
     } 
   } 
 } 
 
+div.popover { 
+  position: fixed; 
+  z-index: 10000;
+  margin-left: 60px; 
+  margin-top: 8px; 
+  left: 50px; 
+} 
+
 div#canvas-table { 
   position: relative; 
   top: 45px; 
+  
+  a.pop-over { 
+    text-decoration: none; 
+  } 
 
   table.canvas { 
     background: white; 

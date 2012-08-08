@@ -96,12 +96,38 @@ p.intro {
 
 div.home-content { 
   position: relative; 
+
+  h4 { 
+    margin-bottom: 20px; 
+  } 
+
+  span { 
+    color: #40a6c4; 
+  } 
+
+  i { 
+    padding-right: 5px; 
+  } 
+  
+  div.features { 
+    margin-top: 40px; 
+
+    h4#features-id { 
+      width: 620px; 
+      text-align: center; 
+    } 
+
+
+    div.features-left { 
+    } 
+
+    div.features-right { 
+    }
+  } 
+ 
 } 
 
-div.home-content span { 
-  color: #40a6c4; 
-} 
-
+/*
 div.features { 
   position: absolute; 
   top: 0; 
@@ -111,12 +137,12 @@ div.features {
   text-align: center; 
   font-weight: bold; 
 } 
+*/
 
 div.testimonials { 
   position: absolute; 
   top: 0; 
   right: 0; 
-  margin-top: 40px; 
   text-align: center; 
   font-weight: bold; 
 } 
@@ -131,7 +157,7 @@ div.main {
 } 
 
 /* outro */ 
-
+/*
 div.outro { 
   background: #191919; 
   position: absolute; 
@@ -139,20 +165,69 @@ div.outro {
   height: 150px; 
   width: 100%; 
 } 
-
+*/
 /* footer */ 
 
 footer { 
+  position: relative; 
   background: black; 
-  height: 60px; 
+  height: 275px; 
+  color: white; 
+  h4 { 
+    color: white; 
+    margin: 20px 0; 
+  } 
+
+  span { 
+    color: #40a6c4; 
+  } 
+
+  div.information { 
+    background: #191919;
+
+    div.outro { 
+      height: 155px; 
+    
+      li { 
+        list-style-type: none; 
+        margin-left: -25px; 
+        margin-bottom: 5px; 
+
+        a { 
+          font-size: 11px; 
+          color: grey; 
+        } 
+      } 
+
+      div.links-left { 
+        float: left; 
+        width: 120px;
+      } 
+ 
+      div.links-right {
+        float: right; 
+        width: 120px; 
+      } 
+
+      input#subscribe { 
+        width: 200px; 
+        height: 20px; 
+      } 
+   
+    } 
+  } 
+
+  div.copyright { 
+
+    p { 
+    width: 350px; 
+    margin: 0  auto; 
+    padding-top: 25px; 
+    } 
+  }
 } 
 
-footer div.copyright { 
-  color: white; 
-  width: 350px; 
-  margin: 0  auto; 
-  padding-top: 25px; 
-}
+
 
 /* dashboard */ 
 

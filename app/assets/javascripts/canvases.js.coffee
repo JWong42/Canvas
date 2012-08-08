@@ -140,3 +140,129 @@ jQuery ($) ->
       $(@).tooltip('hide')
     'a.switch-color'
 
+  $('a#labels').on 
+    'mouseover': (e) -> 
+      $(@).popover
+        placement: 'left'
+        title: 'title' 
+        content: 'hello'
+
+  $('a#problems').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Problems'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+      
+  $('a#key-activities').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Key Activities'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+  $('a#uvp').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Unique Value Propositions'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+  $('a#unfair-advantages').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Unfair Advantages'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+  $('a#customer-segments').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Customer Segments'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+  $('a#key-metrics').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Key Metrics'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyy'
+  $('a#channels').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Channels'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+  $('a#cost-structures').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Cost Structres'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyx'
+  $('a#revenue-streams').on 
+    'click': (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+    'mouseover': (e) -> 
+      $(@).popover 
+        placement: 'top'
+        title: 'Revenue Streams'
+        content: 
+          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
+           jhii
+             kkkkkkkkkkkk  =fddddddddddddddddddhsss
+            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
