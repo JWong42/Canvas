@@ -144,8 +144,9 @@ jQuery ($) ->
     'mouseover': (e) -> 
       $(@).popover
         placement: 'left'
-        title: 'title' 
-        content: 'hello'
+        title: 'Labels'
+        content: 'Add a label to items in the canvas components. 
+                  All items by default will be considered a hypothesis.'
 
   $('a#problems').on 
     'click': (e) ->
@@ -156,10 +157,11 @@ jQuery ($) ->
         placement: 'top'
         title: 'Problems'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'A specific customer need(s) that your 
+           product or service aims to solve. 
+           Example - There is currently no
+           effective way to sync files accross 
+           all devices.'
       
   $('a#key-activities').on 
     'click': (e) ->
@@ -170,10 +172,10 @@ jQuery ($) ->
         placement: 'top'
         title: 'Key Activities'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'Major tasks required to be carried
+           out in order to operate successfully 
+           and make the the business model 
+           work. Example - Software Development.'
 
   $('a#uvp').on 
     'click': (e) ->
@@ -184,10 +186,12 @@ jQuery ($) ->
         placement: 'top'
         title: 'Unique Value Propositions'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'Value provided by your company
+           that satisfies problems of a 
+           customer segment. Example - A 
+           faster and a more reliable way
+           to look for apartments.'
+
   $('a#unfair-advantages').on 
     'click': (e) ->
       e.stopPropagation()
@@ -197,10 +201,12 @@ jQuery ($) ->
         placement: 'top'
         title: 'Unfair Advantages'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          "Differentiation factors of your 
+           company that competitors can't 
+           easily buy or copy. Example - 
+           Partnership with a major brand 
+           or a celebrity."
+
   $('a#customer-segments').on 
     'click': (e) ->
       e.stopPropagation()
@@ -210,10 +216,11 @@ jQuery ($) ->
         placement: 'top'
         title: 'Customer Segments'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'A group of people or organizations
+           that have specific needs that your 
+           product or service can satisfy. 
+           Example - college students.'         
+
   $('a#key-metrics').on 
     'click': (e) ->
       e.stopPropagation()
@@ -223,10 +230,12 @@ jQuery ($) ->
         placement: 'top'
         title: 'Key Metrics'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'Metrics that can be used to
+           identify that your business 
+           is going in a positive direction.
+           Example - Numbers of signups, 
+           activations and conversions.'                                 
+
   $('a#channels').on 
     'click': (e) ->
       e.stopPropagation()
@@ -236,10 +245,12 @@ jQuery ($) ->
         placement: 'top'
         title: 'Channels'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'Ways for you to distribute 
+           your product or service and 
+           reach your customers.
+           Examples - conferences, 
+           retail stores, or advertisments.'
+
   $('a#cost-structures').on 
     'click': (e) ->
       e.stopPropagation()
@@ -249,10 +260,12 @@ jQuery ($) ->
         placement: 'top'
         title: 'Cost Structres'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyx'
+          'All costs incurred to operate your 
+           your business and bring 
+           your product or service to market.
+           Examples - product development and 
+           marketing.'
+
   $('a#revenue-streams').on 
     'click': (e) ->
       e.stopPropagation()
@@ -262,7 +275,7 @@ jQuery ($) ->
         placement: 'top'
         title: 'Revenue Streams'
         content: 
-          'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                 
-           jhii
-             kkkkkkkkkkkk  =fddddddddddddddddddhsss
-            yyyyyyyyyyyyyyyyyyyyyyyyyyy'
+          'Ways for your company to 
+           generate revenue. Examples - 
+           subscription fees, licensing, 
+           or advertisements.'                              
