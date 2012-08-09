@@ -1,6 +1,6 @@
 <div class="container"> 
   <div class="intro">
-      <div class="canvas-intro"><%= image_tag("canvas.jpg", :alt => "canvas") %></div> 
+      <div class="canvas-intro"><%= image_tag("canvas3.jpg", :alt => "canvas") %></div> 
     <div class="intro-content"> 
       <h1 class="intro">CANVAS</h1> 
       <p class="intro">Powerful and Practical Business Model Generation.</p>
@@ -74,15 +74,39 @@
           <table class="table">
             <thead>
               <tr>
-                <th><i class="icon-flag"></i>Kick Ass</th>
+                <th>
+                  <div class="pic">
+                    <%= image_tag "ao.jpg", id: "ao" %> 
+                  </div>
+                  <div class="testimonial">
+                    <p id="name">Alex O</p>
+                    <p id="recommendation">Recommendation</p>
+                  </div>
+                </th>
               </tr> 
             </thead>
             <tbody>
               <tr> 
-                <td>Hi</td> 
+                <td>
+                  <div class="pic">
+                    <%= image_tag "mz.jpg", id: "mz" %> 
+                  </div>
+                  <div class="testimonial">
+                    <p id="name">Mark Z</p>
+                    <p id="recommendation">Recommendation</p>
+                  </div>
+                </td> 
               </tr> 
               <tr> 
-                <td>Hello</td>
+                <td>            
+                  <div class="pic">
+                    <%= image_tag "sj.jpg", id: "sj" %> 
+                  </div>
+                  <div class="testimonial">
+                    <p id="name">Steve J</p>
+                    <p id="recommendation">Recommendation</p>
+                  </div>
+                </td>
               </tr> 
             </tbody> 
           </table>

@@ -127,24 +127,48 @@ div.home-content {
  
 } 
 
-/*
-div.features { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  margin-top: 40px; 
-  margin-left: 20px; 
-  text-align: center; 
-  font-weight: bold; 
-} 
-*/
-
 div.testimonials { 
   position: absolute; 
   top: 0; 
   right: 0; 
   text-align: center; 
   font-weight: bold; 
+
+  tr { 
+    position: relative; 
+  } 
+  
+  div.pic { 
+    float: left; 
+    width: 50px; 
+    margin-top: 5px; 
+
+    img#ao { 
+      height: 50px; 
+    } 
+
+    img#mz { 
+      height: 50px; 
+      width: 40px; 
+    } 
+ 
+    img#sj { 
+      height: 50px; 
+      width: 40px; 
+    } 
+
+  } 
+
+  div.testimonial { 
+    margin-left: 45px; 
+
+    p#name { 
+    } 
+
+    p#recommendation { 
+      font-weight: normal; 
+    } 
+  } 
 } 
 
 /* main */ 
@@ -156,23 +180,14 @@ div.main {
   position: relative; 
 } 
 
-/* outro */ 
-/*
-div.outro { 
-  background: #191919; 
-  position: absolute; 
-  bottom: 0; 
-  height: 150px; 
-  width: 100%; 
-} 
-*/
 /* footer */ 
 
 footer { 
   position: relative; 
   background: black; 
-  height: 275px; 
+  height: 283px; 
   color: white; 
+
   h4 { 
     color: white; 
     margin: 20px 0; 
@@ -191,7 +206,7 @@ footer {
       li { 
         list-style-type: none; 
         margin-left: -25px; 
-        margin-bottom: 5px; 
+        margin-bottom: 10px; 
 
         a { 
           font-size: 11px; 
@@ -207,6 +222,43 @@ footer {
       div.links-right {
         float: right; 
         width: 120px; 
+      } 
+
+      div.social-icons { 
+        margin-top: 15px; 
+
+        img#fb { 
+          margin-left: 50px; 
+          height: 50px; 
+          opacity: 0.2; 
+
+          &:hover { 
+            opacity: 1; 
+          } 
+        } 
+
+        img#twitter { 
+          margin-left: 23px; 
+          height: 50px; 
+          opacity: 0.2; 
+
+          &:hover { 
+            opacity: 1; 
+          } 
+
+        } 
+
+        img#gp { 
+          float: right; 
+          margin-right: 50px; 
+          height: 50px; 
+          opacity: 0.3; 
+
+          &:hover { 
+            opacity: 1; 
+          } 
+
+        } 
       } 
 
       input#subscribe { 
