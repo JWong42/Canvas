@@ -118,14 +118,12 @@ div#canvas-table {
         margin: 10px; 
         border-bottom: 1px solid black; 
       } 
-
-
+ 
       div.items { 
         width: 165px; 
         position: absolute; 
         top: 37px;
         margin-left: 10px; 
- 
 
         input { 
           height: 12px; 
@@ -262,7 +260,7 @@ div#canvas-table {
       } 
     } 
 
-    td#problem { 
+    td#problems { 
       height: 66%; 
       width: 20%; 
     }
@@ -272,12 +270,16 @@ div#canvas-table {
       width: 20%; 
     }
 
-    td#unique_value_proposition { 
+    td#unique_value_propositions { 
       height: 66%; 
       width: 20%; 
+   
+        div.header { 
+          width: 150px; 
+        } 
     } 
 
-    td#unfair_advantage { 
+    td#unfair_advantages { 
       height: 33%; 
       width: 20%; 
     }
@@ -287,26 +289,57 @@ div#canvas-table {
       width: 20%; 
     } 
 
-    td#key_merics { 
+    td#key_metrics { 
       height: 33%; 
       width: 20%; 
+
+      div.km { 
+        position: relative; 
+        height: 190px; 
+      } 
     }
 
     td#channels { 
       height: 33%; 
       width: 20%; 
+      
+      div.c { 
+        position: relative; 
+        height: 195px; 
+      } 
     }
 
-    td#cost_structure { 
+    td#cost_structures { 
       height: 33%; 
       width: 50%; 
+
+      div.cs { 
+        position: relative; 
+        bottom: 0; 
+        height: 195px; 
+      }
+
     }
 
     td#revenue_streams { 
       height: 33%; 
       width: 50%; 
-    } 
+      position: relative; 
+ 
+      div.rs { 
+        position: absolute; 
+        bottom: 0; 
+        height: 200px; 
+        width: 445px; 
+      }
+    
+       div.header { 
+         width: 122px; 
+         position: relative; 
+         text-align: left; 
+      }
 
+    } 
   } 
 } 
 
