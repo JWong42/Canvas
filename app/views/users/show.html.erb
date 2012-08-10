@@ -26,7 +26,7 @@
         <div class="canvases"> 
           <ol> 
             <% @canvases.each do |canvas| %> 
-              <div class="canvas">
+              <div class="canvas" data-id="<%= canvas.id %>" data-name="<%= canvas.name %>" >
                 <div class="canvas-info">
                   <li class="edit"><%= link_to canvas.name, [@user, canvas] %></li>
                   <p>Last updated - <%= time_ago_in_words canvas.updated_at %> ago</p> 

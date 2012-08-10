@@ -16,8 +16,6 @@ jQuery ($) ->
   $('input.new').on 
     "focus": (e) -> 
       $(@).val('')
-    #"blur": -> 
-      #$(@).val('My Canvas')
 
   $('a.save').on 
     'click': (e) -> 
@@ -38,7 +36,7 @@ jQuery ($) ->
             $('div.canvases p.notice').hide()
             $('div.canvases').prepend("
               <ol> 
-                <div class='canvas'>
+                <div class='canvas' data-id='#{data.id}' data-name='#{data.name}'>
                   <div class='canvas-info'>
                     <li class='edit'><a href='/users/#{user_id}/canvases/#{data.id}'>#{data.name}</a></li>
                     <p>Last updated - last than a minute ago</p> 
@@ -55,46 +53,65 @@ jQuery ($) ->
             ")
             $('#myModal').modal('hide')
 
-  $('a.edit').live 
+  $('div.canvases').on 
     'click': (e) -> 
       e.preventDefault() 
       item = $(@).parents().find('li.edit')[0]
-      beforeValue = $(item).html()
       $(item).html('<input type="text"></input>')
       $(item).append('<a href="#" class="edit-save">Save</a><a href="#" class="edit-cancel">Cancel</a>')
+    'a.edit'
 
-      $('a.edit-save').click (e) ->
-        e.preventDefault()
-        content = $(item).find('input').val()
-        if content != ''
-          link = $(beforeValue).attr('href')
-          $.ajax  
-            url: link 
-            type: "PUT"
-            data: 
-              name: content 
-            success: (data) -> 
-              $(item).html($(beforeValue).text(data.text))
-        else 
-          $(item).find('input').effect('highlight')
-        
-      $('a.edit-cancel').click (e) -> 
-        e.preventDefault()
-        $(item).html(beforeValue)
-
-  $('a.delete').live 
+  $('div.canvases').on
     'click': (e) -> 
       e.preventDefault()
+      content = $(@).closest('div.canvas').find('input').val()
       item = $(@).parents().find('li.edit')[0]
-      a = $(item).html()
-      link = $(a).attr('href')
+      console.log(item)
+      if content != ''
+        id = $(@).closest('div.canvas').attr('data-id')
+        baseLink = $(location).attr('href')
+        link = "#{baseLink}/canvases/#{id}"
+        re = link.match(/[\d]+$/)
+        user_id = re[0]
+        console.log(link)
+        $.ajax  
+          url: link 
+          type: "PUT"
+          data: 
+            name: content 
+          success: (data) => 
+            $(@).closest('div.canvas').attr('data-name', data.name)
+            $(item).html("<a href='/users/#{user_id}/canvases/#{data.id}'>#{data.name}</a>")
+      else 
+        $(item).find('input').effect('highlight')
+    'a.edit-save'
+        
+  $('div.canvases').on 
+    'click': (e) -> 
+      e.preventDefault()
+      item = $(@).closest('li.edit')
+      id = $(@).closest('div.canvas').attr('data-id')
+      name = $(@).closest('div.canvas').attr('data-name')
+      link = $(location).attr('href')
+      re = link.match(/[\d]+$/)
+      user_id = re[0]
+      $(item).html("<a href='/users/#{user_id}/canvases/#{id}'>#{name}</a>")
+    'a.edit-cancel'
+
+  $('div.canvases').on 
+    'click': (e) -> 
+      e.preventDefault()
+      id = $(@).closest('div.canvas').attr('data-id')
+      baseLink = $(location).attr('href')
+      link = "#{baseLink}/canvases/#{id}"
       $.ajax
         url: link
         type: "DELETE"
-        success: (data) -> 
-          canvases = $(item).parents().find('div.canvas')
-          canvas = canvases[0]
+        success: (data) => 
+          console.log('success')
+          console.log(data.count)
+          canvas = $(@).closest('div.canvas')
           $(canvas).hide()
           if data.count is 0 
             $('div.canvases').prepend('<p class="notice">There are no existing canvases owned by you.  Create one now to get started.</p>')
-            
+    'a.delete'

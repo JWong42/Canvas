@@ -22,15 +22,15 @@ class CanvasesController < ApplicationController
   def update 
     @canvas = Canvas.find(params[:id])
     if @canvas.update_attributes(name: params[:name])
-      render :json => { :text => params[:name] } 
+      render :json => { :name => @canvas.name, :id => @canvas.id } 
     else
-      render :json => { :text => 'fail' } 
+      render :json => { :name => 'fail' } 
     end 
   end 
 
   def destroy
     Canvas.find(params[:id]).delete 
-    @canvas_count = Canvas.all.count
+    @canvas_count = current_user.canvases.count
     render :json => { :text => 'ok', :count => @canvas_count } 
   end 
 
