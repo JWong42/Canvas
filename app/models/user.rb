@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
+  #attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
   has_many :ownerships, dependent: :destroy
   has_many :canvases, through: :ownerships 
@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   has_secure_password # use bcrypt for password encryption and makes authenticate method available
 
-  EMAIL_REGEX = /^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/i
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :first_name, presence: true, length: { maximum: 20 } 
   validates :last_name, presence: true, length: { maximum: 20 } 

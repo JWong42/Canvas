@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
 
-  before_filter :signed_in_user, only: [:show, :edit, :update] 
-  before_filter :correct_user,   only: [:show, :edit, :update]
+  before_action :signed_in_user, only: [:show, :edit, :update] 
+  before_action :correct_user,   only: [:show, :edit, :update]
 
   def index 
-
   end 
 
   def new 
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
   end 
 
   def create
-    @user = User.new(params[:user]) 
+    @user = User.new(user_params) 
     if @user.save
       session[:user_id] = @user.id 
       flash[:success] = "Welcome!"
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
  
   def update 
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       flash[:success] = "Profile updated" 
       redirect_to @user 
     else
@@ -43,6 +42,10 @@ class UsersController < ApplicationController
 
   private 
 
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end 
+  
   def correct_user
     @user = User.find(params[:id])
     redirect_to root_path unless @user == current_user

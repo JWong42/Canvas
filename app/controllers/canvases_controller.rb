@@ -1,7 +1,7 @@
 class CanvasesController < ApplicationController
 
-  before_filter :signed_in_user
-  #before_filter :correct_user  
+  before_action :signed_in_user
+  #before_action :correct_user  
 
   def index 
   end 

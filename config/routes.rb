@@ -17,9 +17,9 @@ BusinessModelCanvas::Application.routes.draw do
   end 
   resources :sessions,  only: [:new, :create, :destroy]
 
-  match '/signup' => 'users#new'
-  match '/signin' => 'sessions#new'
-  match '/signout' => 'sessions#destroy'
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  get '/signout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
