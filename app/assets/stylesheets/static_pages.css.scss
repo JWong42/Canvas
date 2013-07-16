@@ -4,10 +4,13 @@
 
 html { 
   overflow-y: scroll; 
+  height: 100%; 
 } 
 
 body { 
-  padding-top: 30px; 
+  position: relative; 
+  min-height: 100%; 
+  background: url('brushed_alu.png') repeat left top; 
 } 
 
 /* header */ 
@@ -33,24 +36,53 @@ body {
 
 h1.form, h1.dashboard { 
   text-align: center; 
-  margin-top: 25px; 
+  margin-top: 70px; 
 }
+
+/* navbar */
+
+.navbar {
+
+  .navbar-inner { 
+    background: black;
+  } 
+}
+
+.navbar .nav > li > a { 
+  #padding: 100px 100px 100px 100px;
+  color: white; 
+  text-shadow: none; 
+
+  &:hover { 
+    color: #999999; 
+  } 
+  
+} 
+
+.caret { 
+  border-top: 4px solid white; 
+} 
 
 /* alert */ 
 
 div.alert-success, div.alert-error, div.alert-notice {
   text-align: center; 
   margin-top: 20px; 
-  //margin-bottom: -10px; 
   padding-left: 35px; 
 } 
+
+/* main */ 
+
+div.main { 
+  height: 1300px; 
+}
 
 /* intro */ 
 
 div.intro, div.signup, div.signin { 
   background: white; 
   height: 300px; 
-  margin-top: 50px; 
+  margin-top: 70px; 
   border-radius: 30px; 
   -webkit-border-radius: 30px; 
   -moz-border-radius: 30px; 
@@ -171,21 +203,13 @@ div.testimonials {
   } 
 } 
 
-/* main */ 
-
-div.main { 
-  background: url('brushed_alu.png'); 
-  height: 800px; 
-  padding-bottom: 10px; 
-  position: relative; 
-} 
-
 /* footer */ 
 
 footer { 
-  position: relative; 
+  position: absolute; 
+  width: 100%;
+  bottom: 0px; 
   background: black; 
-  height: 283px; 
   color: white; 
 
   h4 { 
@@ -272,10 +296,10 @@ footer {
   div.copyright { 
 
     p { 
-    width: 350px; 
-    margin: 0  auto; 
-    padding-top: 25px; 
-    } 
+      text-align: center; 
+      margin: 0  auto; 
+      padding-top: 25px; 
+      } 
   }
 } 
 
@@ -419,7 +443,7 @@ div#error_explanation {
 
 div.signup { 
   position: relative; 
-  height: 350px; 
+  height: 390px; 
   margin-top: 20px; 
 }
  
@@ -427,7 +451,7 @@ div.signup {
 
 div.signin { 
   position: relative; 
-  height: 200px; 
+  height: 210px; 
   margin-top: 20px; 
 }
 

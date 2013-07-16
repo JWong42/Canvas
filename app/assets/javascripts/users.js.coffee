@@ -6,9 +6,9 @@ jQuery ($) ->
 
   $('#myModal').on 'show', -> 
     $('#myModal').css 
-      width: '340px'
+      width: '345px'
       'margin-top': -> 
-        -($(this).height() / 2)
+        ($(this).height() / 2)
       'margin-left': ->
         -($(this).width() / 2) 
     $('input.new').val('My Canvas')

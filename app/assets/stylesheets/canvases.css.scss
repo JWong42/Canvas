@@ -5,12 +5,13 @@
 h1.canvas { 
   text-align: center; 
   position: relative; 
-  top: 25px; 
+  #top: 25px; 
+  margin-top: 70px; 
 } 
 
 div.canvas-extra { 
   position: relative; 
-  top: 45px; 
+  top: 10px; 
 
   div.canvas-extra-container { 
     width: 900px; 
@@ -90,7 +91,7 @@ div.popover {
 
 div#canvas-table { 
   position: relative; 
-  top: 45px; 
+  top: 15px; 
   
   a.pop-over { 
     text-decoration: none; 
@@ -99,7 +100,8 @@ div#canvas-table {
   table.canvas { 
     background: white; 
     height: 600px; 
-    width: 900px; 
+    #width: 1120px; 
+    width: 920px; 
     margin: 0 auto;  
     border-collapse: collapse; // borders in table won't have space between them
 
