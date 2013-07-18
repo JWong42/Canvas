@@ -5,12 +5,14 @@
 html { 
   overflow-y: scroll; 
   height: 100%; 
+  position: relative; 
 } 
 
 body { 
   position: relative; 
   min-height: 100%; 
   background: url('brushed_alu.png') repeat left top; 
+  padding-bottom: 290px;
 } 
 
 /* header */ 
@@ -74,7 +76,7 @@ div.alert-success, div.alert-error, div.alert-notice {
 /* main */ 
 
 div.main { 
-  height: 1300px; 
+  height: auto; 
 }
 
 /* intro */ 
@@ -128,6 +130,7 @@ p.intro {
 
 div.home-content { 
   position: relative; 
+  margin-bottom: 200px; 
 
   h4 { 
     margin-bottom: 20px; 
@@ -207,8 +210,9 @@ div.testimonials {
 
 footer { 
   position: absolute; 
-  width: 100%;
   bottom: 0px; 
+  width: 100%;
+  height: 290px;
   background: black; 
   color: white; 
 
@@ -308,15 +312,17 @@ footer {
 /* dashboard */ 
 
 div.content-area { 
-  background: white; 
+  position: relative; 
+  min-height: 350px; 
   margin-top: 20px; 
+  margin-bottom: 200px; 
+  padding-bottom: 40px; 
+  background: white; 
   border-radius: 30px; 
   -webkit-border-radius: 30px; 
   -moz-border-radius: 30px; 
-  position: relative; 
-  // height: 600px; 
 
-  h3.header {
+  h3.canvases-header {
     margin-left: 40px; 
     padding-top: 25px; 
 
@@ -344,7 +350,7 @@ div.content-area {
       p.notice { 
         margin-left: 23px; 
         margin-bottom: 20px; 
-        width: 450px; 
+        width: 400px; 
       }   
 
       div.canvas { 
@@ -361,6 +367,8 @@ div.content-area {
         } 
 
         div.canvas-info { 
+          height: 65px; 
+          position: relative; 
    
           li.edit { 
             font-weight: bold; 
@@ -368,7 +376,7 @@ div.content-area {
             input { 
               margin-bottom: 2px; 
               width: 200px; 
-              height: 10px; 
+              height: 15px; 
             } 
  
             a.edit-save { 
@@ -383,8 +391,9 @@ div.content-area {
           } 
  
           p { 
+            position: absolute; 
+            top: 43px; 
             display: inline; 
-            margin: 0px; 
             font-size: 10px; 
           } 
 
@@ -403,13 +412,6 @@ div.content-area {
       } 
     } 
   
-    div.canvases2 { 
-
-      p.notice { 
-        height: 300px; 
-      } 
-
-    } 
   } 
 
   div.feeds { 
@@ -417,6 +419,11 @@ div.content-area {
     top: 0; 
     right: 0; 
     width: 470px; 
+
+    h3.feeds-header { 
+      margin-left: 40px; 
+      padding-top: 15px; 
+    } 
   } 
 }   
 

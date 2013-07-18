@@ -43,9 +43,9 @@ jQuery ($) ->
                   </div> 
                   <div class='canvas-options'>
                     <ul>
-                      <li><a href='#' class='edit'><i class='icon-edit'></i>Edit Name</a></li>
-                      <li><a href='#' class='delete'><i class='icon-remove'></i>Delete Canvas</a></li>
-                      <li><a href='#' ><i class='icon-plus'></i>Add Collaborators</a></li>
+                      <li><i class='icon-edit'></i><a href='#' class='edit'>Edit Name</a></li>
+                      <li><i class='icon-remove'></i><a href='#' class='delete'>Delete Canvas</a></li>
+                      <li><i class='icon-plus'></i><a href='#' >Add Collaborators</a></li>
                     </ul>
                   </div> 
                 </div>

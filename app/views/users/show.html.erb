@@ -17,13 +17,11 @@
             <a href="#" class="save btn btn-info">Save</a>
           </div>
         </div>
-      <h3 class="header">Your Canvases</h3> 
-      <% if @canvases.empty? %> 
-        <div class="canvases"> 
+      <h3 class="canvases-header">Your Canvases</h3> 
+      <div class="canvases"> 
+        <% if @canvases.empty? %> 
           <p class="notice">There are no existing canvases owned by you. Create one now to get started.</p> 
-        </div> 
-      <% else %> 
-        <div class="canvases"> 
+        <% else %> 
           <ol> 
             <% @canvases.each do |canvas| %> 
               <div class="canvas" data-id="<%= canvas.id %>" data-name="<%= canvas.name %>" >
@@ -33,23 +31,19 @@
                 </div> 
                 <div class="canvas-options">
                   <ul>
-                    <li><a href='#' class="edit"><i class="icon-edit"></i>Edit Name</a></li>
-                    <li><a href='#' class="delete"><i class="icon-remove"></i>Delete Canvas</a></li>
-                    <li><a href='#'><i class="icon-plus"></i>Add Collaborators</a></li>
+                    <li><i class="icon-edit"></i><a href='#' class="edit">Edit Name</a></li>
+                    <li><i class="icon-remove"></i><a href='#' class="delete">Delete Canvas</a></li>
+                    <li><i class="icon-group"></i><a href='#'>View Collaborators</a></li>
                   </ul>
                 </div> 
               </div>
             <% end %> 
           </ol> 
-        </div> 
-      <% end %> 
-      <h3 class="header">Shared Canvases</h3> 
-      <div class="canvases2">
-        <p class="notice">You don't have any canvases shared with you currently.<p/> 
+        <% end %> 
       </div> 
-      <div class="feeds">
-        <h3 class="header">Activity Feeds</h3>
-      </div>
     </div> 
+    <div class="feeds">
+      <h3 class="feeds-header">Activity Feeds</h3>
+    </div>
   </div> 
 </div> 
