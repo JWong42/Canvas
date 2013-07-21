@@ -21,6 +21,8 @@ BusinessModelCanvas::Application.routes.draw do
   get '/signin' => 'sessions#new'
   get '/signout' => 'sessions#destroy'
 
+  get '/events' => 'redis_events#events'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

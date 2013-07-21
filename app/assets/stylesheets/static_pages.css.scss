@@ -414,7 +414,7 @@ div.content-area {
   
   } 
 
-  div.feeds { 
+  div.feeds-main { 
     position: absolute; 
     top: 0; 
     right: 0; 
@@ -423,6 +423,10 @@ div.content-area {
     h3.feeds-header { 
       margin-left: 40px; 
       padding-top: 15px; 
+    } 
+
+    div.feeds {
+      margin-left: 40px; 
     } 
   } 
 }   
