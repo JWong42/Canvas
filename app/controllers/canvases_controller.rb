@@ -3,9 +3,6 @@ class CanvasesController < ApplicationController
   before_action :signed_in_user
   #before_action :correct_user  
 
-  def index 
-  end 
-
   def create
     @canvas = current_user.canvases.create(params[:canvas])
     if @canvas.valid? 
@@ -19,6 +16,7 @@ class CanvasesController < ApplicationController
 
   def show 
     @canvas = Canvas.find(params[:id]) 
+   #@ownership = @canvas.ownership.find_by(user_id: current_user)
   end 
 
   def update 

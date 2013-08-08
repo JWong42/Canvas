@@ -73,7 +73,6 @@ jQuery ($) ->
         link = "#{baseLink}/canvases/#{id}"
         re = link.match(/[\d]+$/)
         user_id = re[0]
-        console.log(link)
         $.ajax  
           url: link 
           type: "PUT"
@@ -108,10 +107,85 @@ jQuery ($) ->
         url: link
         type: "DELETE"
         success: (data) => 
-          console.log('success')
-          console.log(data.count)
           canvas = $(@).closest('div.canvas')
           $(canvas).hide()
           if data.count is 0 
             $('div.canvases').prepend('<p class="notice">There are no existing canvases owned by you.  Create one now to get started.</p>')
     'a.delete'
+
+  $('div.canvases').on 
+    'click': (e) -> 
+      e.preventDefault()
+      id = $(@).closest('div.canvas').attr('data-id')
+      $.cookie('canvas_id', id)
+      $('div#invite').hide() 
+      $.ajax
+        url: '/invites'
+        type: 'GET'
+        data: 
+          canvas_id: id 
+        success: (data) => 
+          console.log(data.status)
+          $('div#collaborators').html("")
+          if data.invites
+            for invite in data.invites 
+              $('div#collaborators').append("
+                <div id='collaborator' title=#{invite.email}>
+                <i id='collaborator-icon' class='icon-user icon-large'></i>
+                <div id='collaborator-name'>#{invite.name}</div>
+                <div id='collaborator-status'>#{invite.status}</div>
+                <a href='mailto:#{invite.email}' id='collaborator-mail'><i class='icon-envelope'></i></a>
+                </div>
+              ")
+
+      $('#modalCollaborators').modal('show')
+    'a.view'
+
+  $('div#invite-new > a').on 
+    'click': (e) -> 
+      e.preventDefault()
+      $('input#invite-name').val('Name')
+      $('input#invite-email').val('Email')
+      $('p#invite-error').text("") 
+      $('div#invite').toggle()
+      console.log('a#invite-new clicked') 
+
+  $('div#invite > input[type="submit"]').on 
+    'click': (e) -> 
+      e.preventDefault()
+      console.log('submit clicked.') 
+      $.ajax 
+        url: '/invites'
+        type: 'POST'
+        data: 
+          invite: 
+            canvas_id: $.cookie('canvas_id')
+            name: $('input#invite-name').val()
+            email: $('input#invite-email').val()
+        success: (data) => 
+          if data.status is 'error!' 
+              errors = ''
+              if data.invite.name 
+                errors = errors + 'Name ' + data.invite.name[0] + '. '
+              if data.invite.email 
+                errors = errors + 'Email ' + data.invite.email[0] + '. '
+              if errors
+                console.log('errors: ' + errors)
+                $('p#invite-error').text("* #{errors}")
+          else 
+              $('p#invite-error').text("") 
+              $('div#collaborators').append("
+                <div id='collaborator' title='#{data.invite.email}'>
+                  <i id='collaborator-icon' class='icon-user icon-large'></i>
+                  <div id='collaborator-name'>#{data.invite.name}</div>
+                  <div id='collaborator-status'>#{data.invite.status}</div>
+                  <a href='mailto:#{data.invite.email}'id='collaborator-mail'><i class='icon-envelope'></i></a>
+                </div>
+              ") 
+              console.log(data.invite.name) 
+              console.log(data.invite.email) 
+
+  $('div#invite > input').on 
+    "focus": (e) -> 
+      $(@).val('')
+

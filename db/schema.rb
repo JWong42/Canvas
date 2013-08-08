@@ -9,117 +9,127 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807042812) do
+ActiveRecord::Schema.define(version: 20130804190412) do
 
-  create_table "canvases", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "canvases", force: true do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "name"
   end
 
-  create_table "channels", :force => true do |t|
+  create_table "channels", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "collaborations", :force => true do |t|
+  create_table "collaborations", force: true do |t|
     t.integer  "user_id"
     t.integer  "collaborator_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "collaborations", ["collaborator_id"], :name => "index_collaborations_on_collaborator_id"
-  add_index "collaborations", ["user_id", "collaborator_id"], :name => "index_collaborations_on_user_id_and_collaborator_id", :unique => true
-  add_index "collaborations", ["user_id"], :name => "index_collaborations_on_user_id"
+  add_index "collaborations", ["collaborator_id"], name: "index_collaborations_on_collaborator_id"
+  add_index "collaborations", ["user_id", "collaborator_id"], name: "index_collaborations_on_user_id_and_collaborator_id", unique: true
+  add_index "collaborations", ["user_id"], name: "index_collaborations_on_user_id"
 
-  create_table "cost_structures", :force => true do |t|
+  create_table "cost_structures", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "customer_segments", :force => true do |t|
+  create_table "customer_segments", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "key_activities", :force => true do |t|
-    t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
-  end
-
-  create_table "key_metrics", :force => true do |t|
-    t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
-  end
-
-  create_table "ownerships", :force => true do |t|
+  create_table "invites", force: true do |t|
     t.integer  "user_id"
     t.integer  "canvas_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "email"
+    t.string   "status",     default: "Invite Pending"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
-  add_index "ownerships", ["canvas_id"], :name => "index_ownerships_on_canvas_id"
-  add_index "ownerships", ["user_id", "canvas_id"], :name => "index_ownerships_on_user_id_and_canvas_id", :unique => true
-  add_index "ownerships", ["user_id"], :name => "index_ownerships_on_user_id"
-
-  create_table "problems", :force => true do |t|
+  create_table "key_activities", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "revenue_streams", :force => true do |t|
+  create_table "key_metrics", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "unfair_advantages", :force => true do |t|
+  create_table "ownerships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "canvas_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ownerships", ["canvas_id"], name: "index_ownerships_on_canvas_id"
+  add_index "ownerships", ["user_id", "canvas_id"], name: "index_ownerships_on_user_id_and_canvas_id", unique: true
+  add_index "ownerships", ["user_id"], name: "index_ownerships_on_user_id"
+
+  create_table "problems", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "unique_value_propositions", :force => true do |t|
+  create_table "revenue_streams", force: true do |t|
     t.string   "content"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "canvas_id"
-    t.text     "tag_color",  :default => "#3ba1bf", :null => false
+    t.text     "tag_color",  default: "#3ba1bf", null: false
   end
 
-  create_table "users", :force => true do |t|
+  create_table "unfair_advantages", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "canvas_id"
+    t.text     "tag_color",  default: "#3ba1bf", null: false
+  end
+
+  create_table "unique_value_propositions", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "canvas_id"
+    t.text     "tag_color",  default: "#3ba1bf", null: false
+  end
+
+  create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

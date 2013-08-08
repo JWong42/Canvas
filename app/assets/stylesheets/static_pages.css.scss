@@ -27,11 +27,12 @@ body {
   font-size: 1.7em;  
   font-weight: bold; 
   line-height: 1; 
-} 
 
-#logo:hover { 
+  &:hover { 
   color: #fff; 
   text-decoration: none; 
+  } 
+
 } 
 
 /* typography */ 
@@ -466,3 +467,8 @@ div.signin {
   margin-top: 20px; 
 }
 
+/* bootstrap modal */ 
+
+.modal-body { 
+  max-height: none; 
+} 

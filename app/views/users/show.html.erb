@@ -4,19 +4,43 @@
   <div class="content-area"> 
     <div class="canvases-main">
       <a href="#myModal" class="new btn btn-info" data-toggle="modal">Create new</a> 
-        <div class="modal hide fade" id="myModal">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">x</button>
-            <h3>Please enter a name.</h3>
+      <div class="modal hide fade" id="myModal">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+          <h3>Please enter a name.</h3>
+        </div>
+        <div class="modal-body">
+          <input class="new" type="text"></input>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn" data-dismiss="modal">Close</a>
+          <a href="#" class="save btn btn-info">Save</a>
+        </div>
+      </div>
+      <div class="modal hide fade" id="modalCollaborators">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3>Collaborators</h3>
+        </div>
+        <div class="modal-body">
+          <div id="collaborators">
+            <div id="collaborator" title="test@gmail.com">
+              <i id="collaborator-icon" class="icon-user icon-large"></i>
+              <div id="collaborator-name">Jerry Shane</div>
+              <div id="collaborator-status">Invite Pending</div>
+              <a href="mailto:test@gmail.com" id="collaborator-mail"><i class="icon-envelope"></i></a>
+            </div>
           </div>
-          <div class="modal-body">
-            <input class="new" type="text"></input>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn" data-dismiss="modal">Close</a>
-            <a href="#" class="save btn btn-info">Save</a>
+          <div id="invite-new"><a href="#">Add a new collaborator -</a></div>
+          <div id="invite">
+            <%= text_field_tag "invite[name]", "Name", id: "invite-name" %>
+            <%= text_field_tag "invite[email]", "Email", id: "invite-email" %>
+            <%= submit_tag "Invite", id: "invite-submit", class: "btn btn-info" %>
+            <p id="invite-error"></p>
           </div>
         </div>
+      </div>
       <h3 class="canvases-header">Your Canvases</h3> 
       <div class="canvases"> 
         <% if @canvases.empty? %> 
@@ -33,7 +57,7 @@
                   <ul>
                     <li><i class="icon-edit"></i><a href='#' class="edit">Edit Name</a></li>
                     <li><i class="icon-remove"></i><a href='#' class="delete">Delete Canvas</a></li>
-                    <li><i class="icon-group"></i><a href='#'>View Collaborators</a></li>
+                    <li><i class="icon-group"></i><a href='#modalCollaborators' class='view'>View Collaborators</a></li>
                   </ul>
                 </div> 
               </div>

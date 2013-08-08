@@ -1,0 +1,76 @@
+// Place all the styles related to the invites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#modalCollaborators { 
+  min-height: 450px; 
+
+  div#collaborators { 
+    height: 300px;
+    overflow: auto; 
+
+    div#collaborator {
+      clear: both; 
+      height: 23px; 
+      padding: 10px 5px; 
+
+      &:hover { 
+        background-color: #eef7fa; 
+        //border: 1px solid black; 
+      } 
+
+      div, i { 
+        float: left; 
+      } 
+
+      div#collaborator-name { 
+        width: 250px;
+        margin-left: 10px;  
+      } 
+
+      a#collaborator-mail { 
+        float: right; 
+        color: black; 
+
+        &:hover { 
+          color: black; 
+          text-decoration: none; 
+        } 
+      } 
+    } 
+  } 
+
+  div#test { 
+    clear: both; 
+  } 
+
+  div#invite-new { 
+    clear: both; 
+    margin-top: 20px; 
+  } 
+
+  div#invite { 
+    margin-top: 10px; 
+
+    input[type="text"] { 
+      float: left; 
+      width: 210px; 
+      margin-right: 10px; 
+    } 
+
+/*
+    input#submit-submit { 
+      float: right; 
+    } 
+
+*/ 
+    
+    p#invite-error { 
+      float: left; 
+      color: red; 
+    } 
+    
+  } 
+} 
+
+

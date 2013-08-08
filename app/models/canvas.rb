@@ -1,8 +1,9 @@
 class Canvas < ActiveRecord::Base
   attr_accessible :name
 
-  has_many :ownerships
+  has_many :ownerships, dependent: :destroy
   has_many :users, through: :ownerships 
+  has_many :invites, dependent: :destroy
 
   has_many :problems 
   has_many :customer_segments

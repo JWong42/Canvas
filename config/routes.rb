@@ -15,13 +15,15 @@ BusinessModelCanvas::Application.routes.draw do
       resources :unique_value_propositions
     end 
   end 
+
   resources :sessions,  only: [:new, :create, :destroy]
+  resources :invites,   only: [:index, :create, :update]
 
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
   get '/signout' => 'sessions#destroy'
-
   get '/events' => 'redis_events#events'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
