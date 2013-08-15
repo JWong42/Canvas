@@ -1,7 +1,6 @@
 class InvitesController < ApplicationController
 
   def index 
-    #@invites = Invite.all()
     @canvas = Canvas.find(params[:canvas_id])
     @invites = @canvas.invites 
     unless @invites.empty? 
@@ -16,7 +15,7 @@ class InvitesController < ApplicationController
     @invite.user_id = current_user.id  
     if @invite.save
       render json: { status: 'success!', invite: { name: @invite.name, email: @invite.email, status: @invite.status } } 
-      #InviteMailer.invite_email(@invite).deliver
+      InviteMailer.invite_email(@invite, current_user).deliver
     else
       render json: { status: 'error!', invite: @invite.errors.messages } 
     end 

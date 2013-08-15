@@ -163,27 +163,28 @@ jQuery ($) ->
             name: $('input#invite-name').val()
             email: $('input#invite-email').val()
         success: (data) => 
+          console.log('okay')
           if data.status is 'error!' 
-              errors = ''
-              if data.invite.name 
-                errors = errors + 'Name ' + data.invite.name[0] + '. '
-              if data.invite.email 
-                errors = errors + 'Email ' + data.invite.email[0] + '. '
-              if errors
-                console.log('errors: ' + errors)
-                $('p#invite-error').text("* #{errors}")
+            errors = ''
+            if data.invite.name 
+              errors = errors + 'Name ' + data.invite.name[0] + '. '
+            if data.invite.email 
+              errors = errors + 'Email ' + data.invite.email[0] + '. '
+            if errors
+              console.log('errors: ' + errors)
+              $('p#invite-error').text("* #{errors}")
           else 
-              $('p#invite-error').text("") 
-              $('div#collaborators').append("
-                <div id='collaborator' title='#{data.invite.email}'>
-                  <i id='collaborator-icon' class='icon-user icon-large'></i>
-                  <div id='collaborator-name'>#{data.invite.name}</div>
-                  <div id='collaborator-status'>#{data.invite.status}</div>
-                  <a href='mailto:#{data.invite.email}'id='collaborator-mail'><i class='icon-envelope'></i></a>
-                </div>
-              ") 
-              console.log(data.invite.name) 
-              console.log(data.invite.email) 
+            $('p#invite-error').text("") 
+            $('div#collaborators').append("
+              <div id='collaborator' title='#{data.invite.email}'>
+                <i id='collaborator-icon' class='icon-user icon-large'></i>
+                <div id='collaborator-name'>#{data.invite.name}</div>
+                <div id='collaborator-status'>#{data.invite.status}</div>
+                <a href='mailto:#{data.invite.email}'id='collaborator-mail'><i class='icon-envelope'></i></a>
+              </div>
+            ") 
+            console.log(data.invite.name) 
+            console.log(data.invite.email) 
 
   $('div#invite > input').on 
     "focus": (e) -> 

@@ -9,8 +9,7 @@ class Invite < ActiveRecord::Base
   validates  :name, presence: true
   validates  :email, presence: true,
                      length: { maximum: 100 },
-                     format: { with: EMAIL_REGEX },
-                     uniqueness: { case_sensitive: false }
+                     format: { with: EMAIL_REGEX }
   validates  :status, presence: true
 
   before_save { |invite| invite.email = email.downcase }
