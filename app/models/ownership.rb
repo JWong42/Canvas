@@ -1,6 +1,4 @@
 class Ownership < ActiveRecord::Base
-  attr_accessible :canvas_id
-
   belongs_to :user
   belongs_to :canvas
 

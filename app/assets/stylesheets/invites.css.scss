@@ -2,6 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div#modalInvites { 
+  min-height: 350px; 
+
+  div#invites { 
+    height: 300px; 
+    overflow: auto; 
+
+    div#invite { 
+      height: 43px; 
+
+      &:hover { 
+        background-color: #eef7fa; 
+      } 
+      
+      i#invite-icon { 
+        float: left; 
+        margin: 7px 0 0 15px; 
+      } 
+
+      div#invite-info { 
+        float: left; 
+        margin-left: 15px; 
+
+        div#invite-by { 
+          font-size: 15px; 
+        } 
+
+        div#invite-date { 
+          font-size: 11px; 
+        } 
+      } 
+
+      div#invite-confirm { 
+        float: right; 
+        margin: 7px 15px 0 0;  
+      } 
+
+      } 
+  } 
+} 
+
 div#modalCollaborators { 
   min-height: 450px; 
 
@@ -16,7 +57,6 @@ div#modalCollaborators {
 
       &:hover { 
         background-color: #eef7fa; 
-        //border: 1px solid black; 
       } 
 
       div, i { 
@@ -49,7 +89,7 @@ div#modalCollaborators {
     margin-top: 20px; 
   } 
 
-  div#invite { 
+  div#invite-form { 
     margin-top: 10px; 
 
     input[type="text"] { 
@@ -58,18 +98,10 @@ div#modalCollaborators {
       margin-right: 10px; 
     } 
 
-/*
-    input#submit-submit { 
-      float: right; 
-    } 
-
-*/ 
-    
     p#invite-error { 
       float: left; 
       color: red; 
     } 
-    
   } 
 } 
 

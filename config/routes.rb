@@ -18,7 +18,8 @@ BusinessModelCanvas::Application.routes.draw do
 
   resources :sessions,  only: [:new, :create, :destroy]
   resources :invites,   only: [:index, :create, :update]
-  #get '/invites' => 'invites#index'
+
+  get '/myinvites' => 'users#invites'
 
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'

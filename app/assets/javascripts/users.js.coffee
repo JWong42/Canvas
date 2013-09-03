@@ -35,21 +35,19 @@ jQuery ($) ->
           else 
             $('div.canvases p.notice').hide()
             $('div.canvases').prepend("
-              <ol> 
-                <div class='canvas' data-id='#{data.id}' data-name='#{data.name}'>
-                  <div class='canvas-info'>
-                    <li class='edit'><a href='/users/#{user_id}/canvases/#{data.id}'>#{data.name}</a></li>
-                    <p>Last updated - last than a minute ago</p> 
-                  </div> 
-                  <div class='canvas-options'>
-                    <ul>
-                      <li><i class='icon-edit'></i><a href='#' class='edit'>Edit Name</a></li>
-                      <li><i class='icon-remove'></i><a href='#' class='delete'>Delete Canvas</a></li>
-                      <li><i class='icon-plus'></i><a href='#' >Add Collaborators</a></li>
-                    </ul>
-                  </div> 
-                </div>
-              </ol> 
+              <div class='canvas' data-id='#{data.id}' data-name='#{data.name}'>
+                <div class='canvas-info'>
+                  <li class='edit'><a href='/users/#{user_id}/canvases/#{data.id}'>#{data.name}</a></li>
+                  <p>Last updated - last than a minute ago</p> 
+                </div> 
+                <div class='canvas-options'>
+                  <ul>
+                    <li><i class='icon-edit'></i><a href='' class='edit'>Edit Name</a></li>
+                    <li><i class='icon-remove'></i><a href='' class='delete'>Delete Canvas</a></li>
+                    <li><i class='icon-group'></i><a href='#modalCollaborators' class='view'>View Collaborators</a></li>
+                  </ul>
+                </div> 
+              </div>
             ")
             $('#myModal').modal('hide')
 
@@ -58,7 +56,7 @@ jQuery ($) ->
       e.preventDefault() 
       item = $(@).parents().find('li.edit')[0]
       $(item).html('<input type="text"></input>')
-      $(item).append('<a href="#" class="edit-save">Save</a><a href="#" class="edit-cancel">Cancel</a>')
+      $(item).append('<a href="" class="edit-save">Save</a><a href="" class="edit-cancel">Cancel</a>')
     'a.edit'
 
   $('div.canvases').on
@@ -118,7 +116,7 @@ jQuery ($) ->
       e.preventDefault()
       id = $(@).closest('div.canvas').attr('data-id')
       $.cookie('canvas_id', id)
-      $('div#invite').hide() 
+      $('div#invite-form').hide() 
       $.ajax
         url: '/invites'
         type: 'GET'
@@ -137,7 +135,6 @@ jQuery ($) ->
                 <a href='mailto:#{invite.email}' id='collaborator-mail'><i class='icon-envelope'></i></a>
                 </div>
               ")
-
       $('#modalCollaborators').modal('show')
     'a.view'
 
@@ -147,10 +144,10 @@ jQuery ($) ->
       $('input#invite-name').val('Name')
       $('input#invite-email').val('Email')
       $('p#invite-error').text("") 
-      $('div#invite').toggle()
+      $('div#invite-form').toggle()
       console.log('a#invite-new clicked') 
 
-  $('div#invite > input[type="submit"]').on 
+  $('div#invite-form > input[type="submit"]').on 
     'click': (e) -> 
       e.preventDefault()
       console.log('submit clicked.') 
@@ -186,7 +183,85 @@ jQuery ($) ->
             console.log(data.invite.name) 
             console.log(data.invite.email) 
 
-  $('div#invite > input').on 
+  $('div#invite-form > input').on 
     "focus": (e) -> 
       $(@).val('')
 
+  $('div#invites-show > a').on 
+    'click': (e) -> 
+      e.preventDefault() 
+      $.ajax
+        url: '/myinvites'
+        type: 'GET'
+        success: (invites) => 
+          console.log(invites[0])
+          console.log(invites[1])
+          $('div#invites').html('')
+          for invite in invites
+            $('div#invites').append("
+            <div id='invite' data-id='#{invite.id}'>
+              <i id='invite-icon' class='icon-th icon-2x'></i>
+              <div id='invite-info'>
+                <div id='invite-by'> 
+                  <span data-canvas='#{invite.canvas_id}'>#{invite.canvas.name}, invited by #{invite.user.first_name} #{invite.user.last_name}</span> 
+                </div> 
+                <div id='invite-date'>#{invite.created_at}</div> 
+              </div> 
+              <div id='invite-confirm'> 
+                <a id='accept' href='' class='new btn btn-info'>Accept</a>
+                <a id='decline' href='' class='btn'>Decline</a>
+              </div> 
+            </div>
+            ")
+        error: (jqXHR, textStatus, errorThrown) =>  
+          console.log(textStatus, errorThrown)
+  
+  $('div#invites').on 
+    'click': (e) -> 
+      e.preventDefault()
+      confirm_type = (@).id
+      invite_id = $(@).closest('div#invite').attr('data-id')
+      canvas_id = $(@).parent().prev().find('div#invite-by span').attr('data-canvas')
+      canvas_name = $(@).parent().prev().find('div#invite-by span').text().split(',')[0]
+      url = window.location.pathname 
+      user_id = url.split("/")[-1..][0]
+      $.ajax
+        url: "/invites/#{invite_id}"
+        type: 'PATCH' 
+        data: 
+          confirm: confirm_type
+          canvas: canvas_id 
+        success: (data) => 
+          ## hide this invite and it shouldn't show up the next time either 
+          $(@).closest('div#invite').hide()
+
+          # if there is a no existing canvas notice, remove it 
+          notice = $('div.canvases').find('p.notice')[0]
+          $('p.notice').remove() if notice 
+
+          # update the number of invites still need to be accepted or declined - the div invites-show part 
+          # hide the modal invites link if the count reaches 0
+          if data.count is 0
+              $('div#invites-show').hide()
+              $('div#modalInvites').modal('hide')
+          else 
+              $('div#invites-show > a').text("#{data.count} new shared canvas invitation")
+
+          ## Add the canvas with the newly created ownership - prepend it to the canvases div since its most recently updated
+          if data.invite is 'accepted' 
+            $('div.canvases').prepend("
+              <div class='canvas' data-id='#{canvas_id}' data-name='#{canvas_name}'>
+                <div class='canvas-info'>
+                  <li class='edit'><a href='/users/#{user_id}/canvases/#{canvas_id}'>#{canvas_name}</a></li>
+                   <p>Last updated - last than a minute ago</p>
+                </div>
+                <div class='canvas-options'>
+                  <ul>
+                    <li><i class='icon-edit'></i><a href='' class='edit'>Edit Name</a></li>
+                    <li><i class='icon-remove'></i><a href='' class='delete'>Delete Canvas</a></li>
+                    <li><i class='icon-group'></i><a href='#modalCollaborators' class='view'>View Collaborators</a></li>
+                  </ul>
+                </div>
+              </div>
+            ")
+    'a'

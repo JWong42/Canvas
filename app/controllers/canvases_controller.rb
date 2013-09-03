@@ -16,7 +16,6 @@ class CanvasesController < ApplicationController
 
   def show 
     @canvas = Canvas.find(params[:id]) 
-   #@ownership = @canvas.ownership.find_by(user_id: current_user)
   end 
 
   def update 
@@ -29,7 +28,7 @@ class CanvasesController < ApplicationController
   end 
 
   def destroy
-    Canvas.find(params[:id]).delete 
+    Canvas.find(params[:id]).destroy 
     @canvas_count = current_user.canvases.count
     render :json => { :text => 'ok', :count => @canvas_count } 
   end 

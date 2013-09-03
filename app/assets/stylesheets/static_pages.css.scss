@@ -323,26 +323,50 @@ div.content-area {
   -webkit-border-radius: 30px; 
   -moz-border-radius: 30px; 
 
-  h3.canvases-header {
-    margin-left: 40px; 
-    padding-top: 25px; 
+  /*
+     Using the :after pseudo-element to insert clear property
+     instead of adding an empty div in html first or assigning 
+     .clearfix bootstrap class. 
+  */  
 
+  &:after { 
+    content: ""; 
+    display: block; 
+    clear: both; 
   } 
-  
+
+  div#invites-show { 
+
+    hr.invite { 
+      border-top: 1px solid black; 
+      width: 91%; 
+      margin: 10px auto; 
+    } 
+
+    text-align: center; 
+    padding-top: 30px; 
+  } 
+
   li {
     list-style-type: none; 
   }
 
   div.canvases-main { 
+    float: left; 
     width: 470px; 
+
+    h3.canvases-header {
+      margin-left: 40px; 
+      padding-top: 25px; 
+    } 
 
     a.new { 
       float: right; 
-      margin-top: 25px; 
+      margin-top: 35px; 
       margin-right: 20px; 
     } 
  
-    div.canvases, div.canvases2 { 
+    div.canvases { 
       margin-left: 18px; 
       margin-top: 15px;  
       width: 500px;
@@ -359,6 +383,8 @@ div.content-area {
         height: 60px; 
         margin-bottom: 30px; 
         margin-right: 70px; 
+        #margin-left: 10px; 
+        margin-left: 25px; 
         padding: 10px; 
         padding-top: 15px; 
         position: relative; 
@@ -416,18 +442,15 @@ div.content-area {
   } 
 
   div.feeds-main { 
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    width: 470px; 
+    float: right; 
+    margin-right: 30px; 
+    width: 400px; 
 
     h3.feeds-header { 
-      margin-left: 40px; 
-      padding-top: 15px; 
+      padding-top: 25px; 
     } 
 
     div.feeds {
-      margin-left: 40px; 
     } 
   } 
 }   

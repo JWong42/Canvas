@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :signed_in_user, only: [:show, :edit, :update] 
+  before_action :signed_in_user, only: [:show, :edit, :update, :invites] 
   before_action :correct_user,   only: [:show, :edit, :update]
 
   def new 
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id]) 
     @canvases = @user.canvases.order('updated_at DESC') 
+    @invites_count = Invite.where(email: @user.email, status: 'Invite Pending').count
   end 
 
   def edit 
@@ -35,6 +36,16 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end 
+  end 
+
+  def invites 
+    @invites = Invite.where email: current_user.email, status: 'Invite Pending'
+    # rendering json format of an instance variable along with its multiple associations while limiting to certain attributes
+    render json: @invites.as_json( include: [
+                                             { canvas: { only: :name } },
+                                             { user: { only: [ :first_name, :last_name ] } } 
+                                           ] ) 
+    #render partial: "users/invites.json"
   end 
 
   private 

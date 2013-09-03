@@ -2,6 +2,34 @@
   <%= render 'shared/flash_messages' %> 
   <h1 class="dashboard">Dashboard</h1> 
   <div class="content-area"> 
+    <% if @invites_count > 0 %> 
+      <div id="invites-show">
+        <hr id="top" class="invite">
+        <a data-toggle="modal" href="#modalInvites"><%= @invites_count %>  new shared canvas <%= 'invitation'.pluralize(@invites_count) %></a>
+        <hr id="bottom" class="invite">
+      </div> 
+    <% end %> 
+    <div class="modal hide fade" id="modalInvites">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Shared canvas <%= 'invitation'.pluralize(@invites_count) %> (<%= @invites_count %>)</h3>
+      </div>
+      <div class="modal-body">
+        <div id="invites">
+          <div id="invite">
+            <i id="invite-icon" class="icon-th icon-2x"></i>
+            <div id="invite-info">
+              <div id="invite-by">Test 2, invited by Jakk Wong</div>
+              <div id="invite-date">Test 2, invited by Jakk Wong</div>
+            </div> 
+            <div id="invite-confirm">
+              <a id="accept" href="" class="new btn btn-info">Accept</a> 
+              <a id="decline" href="" class="btn">Decline</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="canvases-main">
       <a href="#myModal" class="new btn btn-info" data-toggle="modal">Create new</a> 
       <div class="modal hide fade" id="myModal">
@@ -13,12 +41,11 @@
           <input class="new" type="text"></input>
         </div>
         <div class="modal-footer">
-          <a href="#" class="btn" data-dismiss="modal">Close</a>
-          <a href="#" class="save btn btn-info">Save</a>
+          <a href="" class="btn" data-dismiss="modal">Close</a>
+          <a href="" class="save btn btn-info">Save</a>
         </div>
       </div>
       <div class="modal hide fade" id="modalCollaborators">
-
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h3>Collaborators</h3>
@@ -33,7 +60,7 @@
             </div>
           </div>
           <div id="invite-new"><a href="#">Add a new collaborator -</a></div>
-          <div id="invite">
+          <div id="invite-form">
             <%= text_field_tag "invite[name]", "Name", id: "invite-name" %>
             <%= text_field_tag "invite[email]", "Email", id: "invite-email" %>
             <%= submit_tag "Invite", id: "invite-submit", class: "btn btn-info" %>
@@ -46,23 +73,21 @@
         <% if @canvases.empty? %> 
           <p class="notice">There are no existing canvases owned by you. Create one now to get started.</p> 
         <% else %> 
-          <ol> 
-            <% @canvases.each do |canvas| %> 
-              <div class="canvas" data-id="<%= canvas.id %>" data-name="<%= canvas.name %>" >
-                <div class="canvas-info">
-                  <li class="edit"><%= link_to canvas.name, [@user, canvas] %></li>
-                  <p>Last updated - <%= time_ago_in_words canvas.updated_at %> ago</p> 
-                </div> 
-                <div class="canvas-options">
-                  <ul>
-                    <li><i class="icon-edit"></i><a href='#' class="edit">Edit Name</a></li>
-                    <li><i class="icon-remove"></i><a href='#' class="delete">Delete Canvas</a></li>
-                    <li><i class="icon-group"></i><a href='#modalCollaborators' class='view'>View Collaborators</a></li>
-                  </ul>
-                </div> 
-              </div>
-            <% end %> 
-          </ol> 
+          <% @canvases.each do |canvas| %> 
+            <div class="canvas" data-id="<%= canvas.id %>" data-name="<%= canvas.name %>" >
+              <div class="canvas-info">
+                <li class="edit"><%= link_to canvas.name, [@user, canvas] %></li>
+                <p>Last updated - <%= time_ago_in_words canvas.updated_at %> ago</p> 
+              </div> 
+              <div class="canvas-options">
+                <ul>
+                  <li><i class="icon-edit"></i><a href='' class="edit">Edit Name</a></li>
+                  <li><i class="icon-remove"></i><a href='' class="delete">Delete Canvas</a></li>
+                  <li><i class="icon-group"></i><a href='#modalCollaborators' class='view'>View Collaborators</a></li>
+                </ul>
+              </div> 
+            </div>
+          <% end %> 
         <% end %> 
       </div> 
     </div> 
