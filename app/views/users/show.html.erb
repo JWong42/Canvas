@@ -19,8 +19,8 @@
           <div id="invite">
             <i id="invite-icon" class="icon-th icon-2x"></i>
             <div id="invite-info">
-              <div id="invite-by">Test 2, invited by Jakk Wong</div>
-              <div id="invite-date">Test 2, invited by Jakk Wong</div>
+              <div id="invite-by">Test, invited by Demo User</div>
+              <div id="invite-date">Test, invited by Demo User</div>
             </div> 
             <div id="invite-confirm">
               <a id="accept" href="" class="new btn btn-info">Accept</a> 
@@ -93,7 +93,14 @@
     </div> 
     <div class="feeds-main">
       <h3 class="feeds-header">Activity Feeds</h3>
-      <div class="feeds"></div>
+      <div class="feeds">
+        <% @user_activities.each do |feed| %> 
+          <div class="feed">
+            <p class="feed"><%= feed.content %><p>
+            <p class="feed-time"><%= feed.created_at %><p>
+          </div> 
+        <% end %> 
+      </div>
     </div>
   </div> 
 </div> 

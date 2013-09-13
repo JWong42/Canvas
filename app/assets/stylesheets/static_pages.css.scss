@@ -314,7 +314,8 @@ footer {
 
 div.content-area { 
   position: relative; 
-  min-height: 350px; 
+  #min-height: 350px; 
+  height: 785px; 
   margin-top: 20px; 
   margin-bottom: 200px; 
   padding-bottom: 40px; 
@@ -353,7 +354,9 @@ div.content-area {
 
   div.canvases-main { 
     float: left; 
-    width: 470px; 
+    width: 485px; 
+    height: 780px; 
+    //overflow-y: auto; 
 
     h3.canvases-header {
       margin-left: 40px; 
@@ -363,14 +366,16 @@ div.content-area {
     a.new { 
       float: right; 
       margin-top: 35px; 
-      margin-right: 20px; 
+      margin-right: 56px; 
     } 
  
     div.canvases { 
       margin-left: 18px; 
       margin-top: 15px;  
-      width: 500px;
+      height: 702px; 
+      width: 450px;
       margin-bottom: -30px; 
+      overflow-y: auto; 
  
       p.notice { 
         margin-left: 23px; 
@@ -379,15 +384,14 @@ div.content-area {
       }   
 
       div.canvas { 
-        border: 1px solid black; 
+        position: relative; 
+        width: 363px; 
         height: 60px; 
-        margin-bottom: 30px; 
-        margin-right: 70px; 
-        #margin-left: 10px; 
         margin-left: 25px; 
+        margin-bottom: 30px; 
         padding: 10px; 
         padding-top: 15px; 
-        position: relative; 
+        border: 1px solid black; 
 
         &:hover { 
           background: #eef7fa; 
@@ -445,12 +449,15 @@ div.content-area {
     float: right; 
     margin-right: 30px; 
     width: 400px; 
+    height: 710px; 
 
     h3.feeds-header { 
       padding-top: 25px; 
     } 
 
     div.feeds {
+      height: 702px; 
+      overflow-y: auto; 
     } 
   } 
 }   

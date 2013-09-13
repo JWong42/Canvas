@@ -19,15 +19,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '2.3.0'
 gem 'jquery-cookie-rails'
 
-group :development, :test do 
-  gem 'sqlite3'
-end 
+gem 'pg', '0.15.1'
 
-group :production do 
-  gem 'pg', '0.12.2'
-end 
+#group :development, :test do 
+  #gem 'sqlite3'
+#end 
 
-#gem 'puma'
+#group :production do 
+  #gem 'pg', '0.12.2'
+#end 
+
+gem 'puma'
 gem 'redis' 
 
 # To use ActiveModel has_secure_password

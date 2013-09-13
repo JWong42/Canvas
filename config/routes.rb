@@ -20,11 +20,12 @@ BusinessModelCanvas::Application.routes.draw do
   resources :invites,   only: [:index, :create, :update]
 
   get '/myinvites' => 'users#invites'
-
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
   get '/signout' => 'sessions#destroy'
   get '/events' => 'redis_events#events'
+
+  patch '/unreadfeeds' => 'unread_feeds#update'
 
 
   # The priority is based upon order of creation:

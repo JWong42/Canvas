@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   #attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
+  has_one :unread_feed, dependent: :destroy
+
+  has_many :associations, dependent: :destroy
+
   has_many :ownerships, dependent: :destroy
   has_many :canvases, through: :ownerships 
 

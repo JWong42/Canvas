@@ -49,6 +49,12 @@ jQuery ($) ->
                 </div> 
               </div>
             ")
+            $('div.feeds').prepend("
+              <div class='feed'>
+                <p class='feed'>#{data.activity}</p>
+                <p class='feed-time'>less than a minute ago</p>
+              </div>
+            ")
             $('#myModal').modal('hide')
 
   $('div.canvases').on 
@@ -64,13 +70,10 @@ jQuery ($) ->
       e.preventDefault()
       content = $(@).closest('div.canvas').find('input').val()
       item = $(@).parents().find('li.edit')[0]
-      console.log(item)
       if content != ''
         id = $(@).closest('div.canvas').attr('data-id')
         baseLink = $(location).attr('href')
         link = "#{baseLink}/canvases/#{id}"
-        re = link.match(/[\d]+$/)
-        user_id = re[0]
         $.ajax  
           url: link 
           type: "PUT"
@@ -78,7 +81,13 @@ jQuery ($) ->
             name: content 
           success: (data) => 
             $(@).closest('div.canvas').attr('data-name', data.name)
-            $(item).html("<a href='/users/#{user_id}/canvases/#{data.id}'>#{data.name}</a>")
+            $(item).html("<a href='#{link}'>#{data.name}</a>")
+            $('div.feeds').prepend("
+              <div class='feed'>
+                <p class='feed'>#{data.activity}</p>
+                <p class='feed-time'>less than a minute ago</p>
+              </div>
+            ")
       else 
         $(item).find('input').effect('highlight')
     'a.edit-save'
@@ -107,6 +116,12 @@ jQuery ($) ->
         success: (data) => 
           canvas = $(@).closest('div.canvas')
           $(canvas).hide()
+          $('div.feeds').prepend("
+            <div class='feed'>
+              <p class='feed'>#{data.activity}</p>
+              <p class='feed-time'>less than a minute ago</p>
+            </div>
+          ")
           if data.count is 0 
             $('div.canvases').prepend('<p class="notice">There are no existing canvases owned by you.  Create one now to get started.</p>')
     'a.delete'
@@ -161,6 +176,7 @@ jQuery ($) ->
             email: $('input#invite-email').val()
         success: (data) => 
           console.log('okay')
+          console.log(data)
           if data.status is 'error!' 
             errors = ''
             if data.invite.name 
@@ -172,6 +188,14 @@ jQuery ($) ->
               $('p#invite-error').text("* #{errors}")
           else 
             $('p#invite-error').text("") 
+
+            $('div.feeds').prepend("
+              <div class='feed'>
+                <p class='feed'>#{data.invite.activity}</p>
+                <p class='feed-time'>less than a minute ago</p>
+              </div>
+            ")
+
             $('div#collaborators').append("
               <div id='collaborator' title='#{data.invite.email}'>
                 <i id='collaborator-icon' class='icon-user icon-large'></i>
@@ -187,17 +211,24 @@ jQuery ($) ->
     "focus": (e) -> 
       $(@).val('')
 
-  $('div#invites-show > a').on 
+  $('div.content-area').on 
     'click': (e) -> 
       e.preventDefault() 
       $.ajax
         url: '/myinvites'
         type: 'GET'
-        success: (invites) => 
-          console.log(invites[0])
-          console.log(invites[1])
+        success: (data) => 
+          console.log('success!')
+          if data.invites_count is 1
+              invitation = 'invitation'
+          else
+              invitation = 'invitations'
+          $('div.modal-header h3').remove()
+          $('div#modalInvites div.modal-header').append("
+            <h3>Shared canvas #{invitation} (#{data.invites_count})</h3>
+          ")
           $('div#invites').html('')
-          for invite in invites
+          for invite in data.invites
             $('div#invites').append("
             <div id='invite' data-id='#{invite.id}'>
               <i id='invite-icon' class='icon-th icon-2x'></i>
@@ -215,7 +246,8 @@ jQuery ($) ->
             ")
         error: (jqXHR, textStatus, errorThrown) =>  
           console.log(textStatus, errorThrown)
-  
+    'div#invites-show a'
+
   $('div#invites').on 
     'click': (e) -> 
       e.preventDefault()
@@ -246,6 +278,13 @@ jQuery ($) ->
               $('div#modalInvites').modal('hide')
           else 
               $('div#invites-show > a').text("#{data.count} new shared canvas invitation")
+
+          $('div.feeds').prepend("
+            <div class='feed'>
+              <p class='feed'>#{data.activity}</p>
+              <p class='feed-time'>less than a minute ago</p>
+            </div>
+          ")
 
           ## Add the canvas with the newly created ownership - prepend it to the canvases div since its most recently updated
           if data.invite is 'accepted' 
