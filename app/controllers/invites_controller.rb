@@ -22,8 +22,10 @@ class InvitesController < ApplicationController
         users = @canvas.users.where.not(email: current_user.email) # this needs to be extracted to reduce redundancy
         user = User.where(email: @invite.email).first # check if potential collaborator already registered an account
         unless user.blank?
-          Association.create!(user_id: user.id, canvas_id: @canvas.id)
           users << user
+          user_id = user.id
+          Association.create!(user_id: user_id, canvas_id: @canvas.id)
+          invites_count = Invite.where(email: user.email, status: 'Invite Pending').count 
         end 
         emails = users.map(&:email)  # same for this as above
         emails = emails.to_set
@@ -37,11 +39,10 @@ class InvitesController < ApplicationController
             unread_feed.update_attributes!(user_id: user.id, count: unread_feed_count, list: unread_feed_list)
           end
         end 
-        invites_count = Invite.where(email: user.email, status: 'Invite Pending').count 
-        data = { id: user.id, invites_count: invites_count, notification: content, emails: emails, type: 'invite-sent' }.to_json
+        data = { id: user_id, invites_count: invites_count, notification: content, emails: emails, type: 'invite-sent' }.to_json
         redis.publish('feeds', data)
         render json: { status: 'success!', invite: { name: @invite.name, email: @invite.email, status: @invite.status, activity: content } } 
-        InviteMailer.invite_email(@invite, current_user).deliver
+        InviteMailer.delay.invite_email(@invite.id, current_user.id) # using sidekiq to send this into background
       end 
     else
       render json: { status: 'error!', invite: @invite.errors.messages } 
