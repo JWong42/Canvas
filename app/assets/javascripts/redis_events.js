@@ -39,15 +39,18 @@ jQuery(document).ready(function() {
 
       case 'invite-sent':
         console.log('it works');
-        var invitation; 
-        console.log(data.invites_count); 
-        if (data.invites_count == 1) { 
-          invitation = 'invitation';
-        } else { 
-          invitation = 'invitations'; 
+        link = window.location.pathname;
+        user_id = link.split("/").pop();
+        if (data.id == user_id) { 
+          var invitation; 
+          if (data.invites_count == 1) { 
+            invitation = 'invitation';
+          } else { 
+            invitation = 'invitations'; 
+          } 
+          $('div.content-area').find('div#invites-show').remove();
+          $('div.content-area').prepend("<div id='invites-show'><hr id='top' class='invite'><a data-toggle='modal' href='#modalInvites'>" + data.invites_count + " new shared canvas " + invitation + "</a><hr id='bottom' class='invite'></div>"); 
         } 
-        $('div.content-area').find('div#invites-show').remove();
-        $('div.content-area').prepend("<div id='invites-show'><hr id='top' class='invite'><a data-toggle='modal' href='#modalInvites'>" + data.invites_count + " new shared canvas " + invitation + "</a><hr id='bottom' class='invite'></div>"); 
         break; 
     } 
 
