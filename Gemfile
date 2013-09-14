@@ -31,6 +31,8 @@ gem 'pg', '0.15.1'
 
 gem 'puma'
 gem 'redis' 
+gem 'sidekiq'
+gem 'clockwork'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
