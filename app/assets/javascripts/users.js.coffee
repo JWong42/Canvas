@@ -20,9 +20,8 @@ jQuery ($) ->
   $('a.save').on 
     'click': (e) -> 
       e.preventDefault()
-      link = $(location).attr('href')
-      re = link.match(/[\d]+$/)
-      user_id = re[0]
+      link = window.location.pathname;
+      user_id = link.split("/")[2]
       $.ajax 
         url: "/users/#{user_id}/canvases"
         type: "POST"
@@ -98,9 +97,8 @@ jQuery ($) ->
       item = $(@).closest('li.edit')
       id = $(@).closest('div.canvas').attr('data-id')
       name = $(@).closest('div.canvas').attr('data-name')
-      link = $(location).attr('href')
-      re = link.match(/[\d]+$/)
-      user_id = re[0]
+      link = window.location.pathname;
+      user_id = link.split("/")[2]
       $(item).html("<a href='/users/#{user_id}/canvases/#{id}'>#{name}</a>")
     'a.edit-cancel'
 

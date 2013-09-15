@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
       case 'invite-sent':
         console.log('it works');
         link = window.location.pathname;
-        user_id = link.split("/").pop();
+        user_id = link.split("/")[2]
         if (data.id == user_id) { 
           var invitation; 
           if (data.invites_count == 1) { 
@@ -69,9 +69,8 @@ jQuery(document).ready(function() {
           $(notification).css('background', 'none'); 
         } 
       } 
-    link = $(location).attr('href');
-    re = link.match(/[\d]+$/);
-    user_id = re[0];
+    link = window.location.pathname;
+    user_id = link.split("/")[2]
     $.ajax({
       url: "/unreadfeeds", 
       type: "PATCH", 
