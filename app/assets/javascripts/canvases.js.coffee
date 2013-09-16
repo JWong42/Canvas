@@ -42,18 +42,16 @@ jQuery ($) ->
           success: (data) => 
             console.log(data.text)
             $(@).closest('.item-insert').hide()
-            $(@).closest('div.items').append(" 
-              <ul>
-                <div class='item-container'>
-                  <div class='item'>
-                    <li style='color: #{data.color}' data-id=#{data.text}>#{content}</li>
-                  </div>
-                  <div class='item-options'>
-                    <a href='#' rel='tooltip' title='Change label' class='switch-color'><i class='icon-tag'></i></a>
-                    <a href='#' rel='tooltip' title='Delete item' class='remove-item'><i class='icon-remove'></i></a>
-                  </div>
+            $(@).closest('div.items').find('ul').append(" 
+              <div class='item-container'>
+                <div class='item'>
+                  <li style='color: #{data.color}' data-id=#{data.text}>#{content}</li>
                 </div>
-              </ul>
+                <div class='item-options'>
+                  <a href='#' rel='tooltip' title='Change label' class='switch-color'><i class='icon-tag'></i></a>
+                  <a href='#' rel='tooltip' title='Delete item' class='remove-item'><i class='icon-remove'></i></a>
+                </div>
+              </div>
             ")
             $(@).closest('td.area').on 'click', insertInput
       else 

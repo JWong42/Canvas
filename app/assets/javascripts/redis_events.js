@@ -52,6 +52,24 @@ jQuery(document).ready(function() {
           $('div.content-area').prepend("<div id='invites-show'><hr id='top' class='invite'><a data-toggle='modal' href='#modalInvites'>" + data.invites_count + " new shared canvas " + invitation + "</a><hr id='bottom' class='invite'></div>"); 
         } 
         break; 
+
+      case 'item-create': 
+        // make sure the user is on the right canvas id in the url
+        $('td#' + data.component + ' div.items ul').append("<div class='item-container'><div class='item'><li style='color: " + data.item_color + "' data-id=" + data.item_id + ">" + data.item_content + "</li></div><div class='item-options'><a href='#' rel='tooltip' title='Change label' class='switch-color'><i class='icon-tag'></i></a><a href='#' rel='tooltip' title='Delete item' class='remove-item'><i class='icon-remove'></i></a></div></div>");
+        //$(@).closest('td.area').on 'click', insertInput   // dont know if this one is actually needed? test without it 
+        break; 
+    
+      case 'item-update': 
+        console.log('ok item-update'); 
+        $("td#" + data.component + " li[data-id='" + data.item_id + "']").attr("style", "color: " + data.item_color); 
+        break; 
+        
+      case 'item-delete': 
+        //$(@).closest('.item-container').hide()
+        $("td#" + data.component + " li[data-id='" + data.item_id + "']").closest('div.item-container').hide(); 
+        console.log('item delete works.');
+        break; 
+
     } 
 
   }); 

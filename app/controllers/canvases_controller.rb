@@ -25,7 +25,7 @@ class CanvasesController < ApplicationController
     @canvas = Canvas.find(params[:id])
     old_name = @canvas.name
     if @canvas.update_attributes(name: params[:name])
-      redis = Redis.new 
+      redis = Redis.new
       content = "#{current_user.first_name} #{current_user.last_name} changed name of #{old_name} to #{@canvas.name}."
       feed = Feed.new(content: content, user_id: current_user.id, canvas_id: @canvas.id)
       if feed.save
@@ -56,7 +56,7 @@ class CanvasesController < ApplicationController
     emails = users.map(&:email) # same for this as above
     @canvas.destroy
     canvas_count = current_user.canvases.count
-    redis = Redis.new 
+    redis = Redis.new
     content = "#{current_user.first_name} #{current_user.last_name} deleted #{@canvas.name}."
     feed = Feed.new(content: content, user_id: current_user.id, canvas_id: @canvas.id)
     if feed.save
