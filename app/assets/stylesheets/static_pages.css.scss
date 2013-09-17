@@ -74,6 +74,18 @@ div.alert-success, div.alert-error, div.alert-notice {
   padding-left: 35px; 
 } 
 
+/* container */ 
+
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+    width: 1170px; 
+}
+
+.container { 
+  width: 1170px; 
+} 
+
 /* main */ 
 
 div.main { 
@@ -82,7 +94,7 @@ div.main {
 
 /* intro */ 
 
-div.intro, div.signup, div.signin { 
+div.intro, div#signup, div#signin { 
   background: white; 
   height: 300px; 
   margin-top: 70px; 
@@ -464,6 +476,10 @@ div.content-area {
 
 /* form */ 
 
+div.form { 
+  margin-left: 355px; 
+} 
+
 form.new_user, form.new_session, form.edit_user { 
   width: 310px; 
   position: absolute; 
@@ -483,7 +499,7 @@ div#error_explanation {
 
 /* signup form */ 
 
-div.signup { 
+div#signup { 
   position: relative; 
   height: 390px; 
   margin-top: 20px; 
@@ -491,11 +507,15 @@ div.signup {
  
 /* signin form */
 
-div.signin { 
+div#signin { 
   position: relative; 
-  height: 210px; 
+  height: 215px; 
   margin-top: 20px; 
 }
+
+p#signup { 
+  margin: 5px 0 10px; 
+} 
 
 /* bootstrap modal */ 
 

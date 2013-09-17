@@ -1,23 +1,24 @@
 <div class="container">
   <div class="row">
-  <div class="span6 offset3">
-  <%= render 'shared/flash_messages' %>
-  <h1 class="form">Sign In</h1>
-  <div class="signin">
-  <%= form_tag({action: 'create'}, class: 'new_session') do |f| %>
+    <div class="form span6">
+      <%= render 'shared/flash_messages' %>
+      <h1 class="form">Sign In</h1>
+      <div id="signin">
+        <%= form_tag({action: 'create'}, class: 'new_session') do |f| %>
 
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
 
-    <%= submit_tag "Sign in", class: "btn btn-info" %>
+          <%= submit_tag "Sign in", class: "btn btn-info" %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
-  <% end %>
+          <p id="signup">New user? <%= link_to "Sign up now!", signup_path %></p> 
+
+        <% end %>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 </div>
 
