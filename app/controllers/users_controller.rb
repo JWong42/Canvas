@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def edit 
     @user = User.find(params[:id])
+    @notifications = get_notifications(@user)
   end 
  
   def update 
