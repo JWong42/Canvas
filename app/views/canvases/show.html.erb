@@ -1,14 +1,12 @@
 <%= render 'shared/flash_messages' %>
 <h1 class="canvas">Canvas</h1>
-<div class="canvas-extra">
-  <div class="canvas-extra-container">
-    <div class="canvas-name"><p>Name: <span class="name"><%= @canvas.name  %></span></p></div>
-    <div class="tags">
-        <a href='#' id='labels' rel='popover'><p>Labels:</p></a>
-        <div class="hypothesis"><div class="box"><span>hypothesis<span></div></div>
-        <div class="validated"><div class="box"><span>validated</span></div></div>
-        <div class="invalidated"><div class="box"><span>invalidated</span></div></div>
-    </div>
+<div class="container canvas-info">
+  <div class="canvas-name"><p>Name: <span class="name"><%= @canvas.name  %></span></p></div>
+  <div class="tags">
+      <a href='#' id='labels' rel='popover'><p>Labels:</p></a>
+      <div class="hypothesis"><div class="box"><span>hypothesis<span></div></div>
+      <div class="validated"><div class="box"><span>validated</span></div></div>
+      <div class="invalidated"><div class="box"><span>invalidated</span></div></div>
   </div>
 </div> 
 <div id="canvas-table"> 
@@ -27,8 +25,8 @@
                     <li style="color: <%= problem.tag_color %>" data-id=<%= problem.id %>><%= problem.content %></li>
                   </div>
                   <div class="item-options">
-                    <a href='#' rel="tooltip" title="Change label" class="switch-color"><i class="icon-tag"></i></a>
-                    <a href='#' rel="tooltip" title="Delete item" class="remove-item"><i class="icon-remove"></i></a>
+                    <a href='#' rel="tooltip" title="Change Label" class="switch-color"><i class="icon-tag"></i></a>
+                    <a href='#' rel="tooltip" title="Delete Item" class="remove-item"><i class="icon-remove"></i></a>
                   </div>
                 </div>
               <% end %>
@@ -39,7 +37,7 @@
           <div class="header">
             <a href='#' class='pop-over' id='key-activities' rel='popover'><h4>Key Activities<h4></a>
           </div>
-           <div class="items b" id="three">
+          <div class="items b" id="three">
             <ul>
               <% @canvas.key_activities.each do |key_activity| %> 
                 <div class="item-container">
@@ -166,7 +164,7 @@
         <td class="area" id="cost_structures" colspan="3">
           <div class="cs">
             <div class="header">
-              <h4>Cost Structures</h4>
+              <a href='#' class='pop-over' id='cost-structures' rel='popover'><h4>Cost Structures</h4></a>
             </div>
             <div class="items" id="two">
               <ul>
@@ -188,7 +186,7 @@
         <td class="area" id="revenue_streams" colspan="3">
           <div class="rs"> <!-- added this div to style for firefox browser --> 
             <div class="header">
-              <h4>Revenue Streams</h4>
+              <a href='#' class='pop-over' id='revenue-streams' rel='popover'><h4>Revenue Streams</h4></a>
             </div>
             <div class="items" id="two">
               <ul>

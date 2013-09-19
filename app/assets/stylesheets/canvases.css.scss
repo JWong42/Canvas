@@ -5,22 +5,15 @@
 h1.canvas { 
   text-align: center; 
   position: relative; 
-  #top: 25px; 
   margin-top: 70px; 
 } 
 
-div.canvas-extra { 
-  position: relative; 
-  top: 10px; 
-
-  div.canvas-extra-container { 
-    width: 900px; 
-    margin: 0 auto; 
+  div.container.canvas-info {
     position: relative; 
 
     div.canvas-name { 
       position: relative; 
-      left: 10px; 
+      left: 0px; 
  
       span.name { 
         font-weight: bold; 
@@ -35,7 +28,7 @@ div.canvas-extra {
       position: absolute; 
       top: 0; 
       right: 0; 
-      width: 300px;
+      width: 305px;
  
       a { 
         color: inherit; 
@@ -78,7 +71,6 @@ div.canvas-extra {
       } 
 
     } 
-  } 
 } 
 
 div.popover { 
@@ -101,8 +93,7 @@ div#canvas-table {
     background: white; 
     height: 600px; 
     width: 1170px; 
-    #width: 920px; 
-    margin: 0 auto;  
+    margin: 0 auto 180px;  
     border-collapse: collapse; // borders in table won't have space between them
 
     td.area { 
@@ -117,15 +108,20 @@ div#canvas-table {
       div.header { 
         position: absolute; 
         top: 0; 
-        margin: 10px; 
-        border-bottom: 1px solid black; 
+        //border-bottom: 1px solid black; 
+        width: 230px; 
+
+        h4 { 
+          color: black; 
+          text-decoration: underline; 
+        } 
       } 
  
       div.items { 
-        width: 165px; 
+        width: 205px; 
         position: absolute; 
         top: 37px;
-        margin-left: 10px; 
+        margin-left: 25px; 
 
         input { 
           height: 12px; 
@@ -134,15 +130,16 @@ div#canvas-table {
 
         div.item-insert  { 
           position: relative; 
+          width: 155px; 
 
           input.one { 
             height: 12px; 
-            width: 148px; 
+            width: 155px; 
           } 
   
           input.two { 
             height: 12px; 
-            width: 420px; 
+            width: 519px; 
           }
 
           input.three { 
@@ -159,13 +156,14 @@ div#canvas-table {
             float: right; 
             font-size: 10px; 
             margin-top: -8px; 
+            margin-right: -10px; 
           } 
 
         } 
 
         div.item-container {
-          height: 20px; 
-          width: 165px; 
+          //height: 20px; 
+          width: 200px; 
           position: relative; 
           left: -25px; 
           margin-bottom: 8px; 
@@ -175,20 +173,25 @@ div#canvas-table {
           } 
  
           div.item { 
-            width: 132px; 
+            width: 167px; 
 
             li  { 
-              list-style-type: none; 
+              //list-style-type: none; 
               text-align: left; 
-              width: 137px; 
+              //width: 137px; 
             } 
           } 
 
           div.item-options { 
             position: absolute; 
-            top: 2px;
+            top: 1px;
             right: 0; 
             display: none; 
+            padding-right: 5px; 
+
+            a.remove-item { 
+              padding-left: 1px; 
+            } 
 
             i { 
               margin-right: -2px; 
@@ -202,43 +205,47 @@ div#canvas-table {
         top: 53px; 
 
         div.item-container { 
-          width: 158px; 
+          //width: 158px; 
 
           li { 
-            width: 130px; 
+            //width: 130px; 
           } 
 
         } 
 
         a.new-save { 
-          right: 48px; 
+          //right: 48px; 
         } 
 
         a.new-cancel { 
-          margin-right: 8px; 
+          //margin-right: 8px; 
         } 
       } 
  
       div#two { 
-        width: 428px; 
+        width: 552px; 
         
         div.item-container { 
-          width: 428px; 
+          width: 552px; 
 
-          li { 
-            width: 400px; 
+          div.item { 
+            width: 519px; 
           } 
 
+        } 
+
+        div.item-insert { 
+          width: 519px; 
         } 
       } 
 
       div.items.b { 
 
         div.item-container { 
-          width: 157px; 
+          //width: 157px; 
 
           div.item li { 
-            width: 130px; 
+            //width: 130px; 
           } 
 
         } 
@@ -247,15 +254,15 @@ div#canvas-table {
         div.item-insert { 
 
           input.three { 
-            width: 150px; 
+            //width: 150px; 
           } 
   
           a.new-save { 
-            right: 45px; 
+            //right: 45px; 
           } 
      
           a.new-cancel { 
-            margin-right: 5px; 
+            //margin-right: 5px; 
           } 
 
         } 
@@ -265,6 +272,7 @@ div#canvas-table {
     td#problems { 
       height: 66%; 
       width: 20%; 
+
     }
 
     td#key_activities { 
@@ -276,9 +284,6 @@ div#canvas-table {
       height: 66%; 
       width: 20%; 
    
-        div.header { 
-          width: 150px; 
-        } 
     } 
 
     td#unfair_advantages { 
@@ -321,6 +326,9 @@ div#canvas-table {
         height: 195px; 
       }
 
+       div.header { 
+         width: 585px;; 
+       }
     }
 
     td#revenue_streams { 
@@ -336,10 +344,8 @@ div#canvas-table {
       }
     
        div.header { 
-         width: 122px; 
-         position: relative; 
-         text-align: left; 
-      }
+         width: 585px;; 
+       }
 
     } 
   } 
