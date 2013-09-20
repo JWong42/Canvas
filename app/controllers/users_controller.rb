@@ -33,6 +33,7 @@ class UsersController < ApplicationController
  
   def update 
     @user = User.find(params[:id])
+    @notifications = get_notifications(@user)
     if @user.update_attributes(user_params)
       content = "#{current_user.first_name} #{current_user.last_name} updated profile information."
       Feed.create!(content: content, user_id: current_user.id)
