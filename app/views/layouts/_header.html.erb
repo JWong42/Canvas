@@ -13,12 +13,12 @@
                     <% if not @user.unread_feed.nil? and @user.unread_feed.list.include?(feed.id) %>
                       <div class="notification" data-type="new">
                         <li><%= feed.content %></li> 
-                        <li><%= feed.created_at %></li> 
+                        <li class="datetime"><%= feed.created_at %></li> 
                       </div>
                     <% else %> 
                       <div class="notification">
                         <li><%= feed.content %></li> 
-                        <li><%= feed.created_at %></li> 
+                        <li class="datetime"><%= feed.created_at %></li> 
                       </div>
                     <% end %>
                   <% end %>

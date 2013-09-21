@@ -53,22 +53,24 @@ jQuery ($) ->
                 <p class='feed'>#{data.activity}</p>
                 <p class='feed-time'>less than a minute ago</p>
               </div>
+              <hr />
             ")
             $('#myModal').modal('hide')
 
   $('div.canvases').on 
     'click': (e) -> 
       e.preventDefault() 
-      item = $(@).parents().find('li.edit')[0]
+      canvas = $(@).parents('div.canvas')
+      item = $(canvas).find('li.edit')
       $(item).html('<input type="text"></input>')
-      $(item).append('<a href="" class="edit-save">Save</a><a href="" class="edit-cancel">Cancel</a>')
+      $(item).append('<a href="" class="edit-cancel">Cancel</a><a href="" class="edit-save">Save</a>')
     'a.edit'
 
   $('div.canvases').on
     'click': (e) -> 
       e.preventDefault()
       content = $(@).closest('div.canvas').find('input').val()
-      item = $(@).parents().find('li.edit')[0]
+      item = $(@).parent()
       if content != ''
         id = $(@).closest('div.canvas').attr('data-id')
         baseLink = $(location).attr('href')
@@ -86,6 +88,7 @@ jQuery ($) ->
                 <p class='feed'>#{data.activity}</p>
                 <p class='feed-time'>less than a minute ago</p>
               </div>
+              <hr />
             ")
       else 
         $(item).find('input').effect('highlight')
@@ -119,6 +122,7 @@ jQuery ($) ->
               <p class='feed'>#{data.activity}</p>
               <p class='feed-time'>less than a minute ago</p>
             </div>
+            <hr />
           ")
           if data.count is 0 
             $('div.canvases').prepend('<p class="notice">There are no existing canvases owned by you.  Create one now to get started.</p>')
@@ -192,6 +196,7 @@ jQuery ($) ->
                 <p class='feed'>#{data.invite.activity}</p>
                 <p class='feed-time'>less than a minute ago</p>
               </div>
+              <hr />
             ")
 
             $('div#collaborators').append("
@@ -282,6 +287,7 @@ jQuery ($) ->
               <p class='feed'>#{data.activity}</p>
               <p class='feed-time'>less than a minute ago</p>
             </div>
+            <hr />
           ")
 
           ## Add the canvas with the newly created ownership - prepend it to the canvases div since its most recently updated

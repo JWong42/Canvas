@@ -44,10 +44,33 @@ h1.form, h1.dashboard {
 
 /* navbar */
 
-.navbar {
+header.navbar {
 
-  .navbar-inner { 
+  div.navbar-inner { 
     background: black;
+
+    ul#notifications {
+      height: 363px; 
+      width: 450px; 
+      padding: 10px; 
+      overflow-y: auto; 
+
+      div.notification { 
+        height: 70px; 
+        border-bottom: 1px solid #e6e6e6; 
+        padding: 10px; 
+        position: relative; 
+
+        &:hover { 
+          background: #eef7fa; 
+        } 
+
+        li.datetime { 
+          position: absolute; 
+          bottom: 6px; 
+        } 
+      } 
+    } 
   } 
 }
 
@@ -327,7 +350,7 @@ footer {
 div.content-area { 
   position: relative; 
   #min-height: 350px; 
-  height: 785px; 
+  height: 865px; 
   margin-top: 20px; 
   margin-bottom: 200px; 
   padding-bottom: 40px; 
@@ -366,7 +389,8 @@ div.content-area {
 
   div.canvases-main { 
     float: left; 
-    width: 485px; 
+    //width: 485px; 
+    width: 550px; 
     height: 780px; 
     //overflow-y: auto; 
 
@@ -378,14 +402,16 @@ div.content-area {
     a.new { 
       float: right; 
       margin-top: 35px; 
-      margin-right: 56px; 
+      //margin-right: 56px; 
+      margin-right: 26px; 
     } 
  
     div.canvases { 
       margin-left: 18px; 
       margin-top: 15px;  
-      height: 702px; 
-      width: 450px;
+      height: 735px; 
+      //width: 450px;
+      //width: 505px;
       margin-bottom: -30px; 
       overflow-y: auto; 
  
@@ -397,8 +423,10 @@ div.content-area {
 
       div.canvas { 
         position: relative; 
-        width: 363px; 
-        height: 60px; 
+        //width: 363px; 
+        width: 458px; 
+        //height: 60px; 
+        height: 90px; 
         margin-left: 25px; 
         margin-bottom: 30px; 
         padding: 10px; 
@@ -415,10 +443,13 @@ div.content-area {
    
           li.edit { 
             font-weight: bold; 
+            width: 250px; 
+            font-size: 16px; 
         
             input { 
               margin-bottom: 2px; 
-              width: 200px; 
+              //width: 200px; 
+              width: 240px; 
               height: 15px; 
             } 
  
@@ -429,15 +460,18 @@ div.content-area {
 
             a.edit-save, a.edit-cancel { 
               font-size: 12px; 
+              float: right; 
+              margin-left: 10px; 
             } 
           
           } 
  
           p { 
             position: absolute; 
-            top: 43px; 
+            #top: 43px; 
+            top: 70px; 
             display: inline; 
-            font-size: 10px; 
+            font-size: 12px; 
           } 
 
         } 
@@ -447,9 +481,14 @@ div.content-area {
           top: 15px; 
           right: 15px; 
 
-          i { 
-            padding-right: 5px; 
-          } 
+          li { 
+            margin-bottom: 10px; 
+
+            i { 
+              padding-right: 5px; 
+            } 
+
+          }
 
         } 
       } 
@@ -460,16 +499,22 @@ div.content-area {
   div.feeds-main { 
     float: right; 
     margin-right: 30px; 
-    width: 400px; 
-    height: 710px; 
+    //width: 400px; 
+    width: 500px; 
+    height: 830px; 
 
     h3.feeds-header { 
       padding-top: 25px; 
     } 
 
     div.feeds {
-      height: 702px; 
+      height: 740px; 
       overflow-y: auto; 
+
+      div.feed, hr { 
+        margin-right: 10px; 
+      } 
+
     } 
   } 
 }   

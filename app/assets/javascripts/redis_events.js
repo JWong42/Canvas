@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
     } 
     count += 1;
     $('span#notifications').text(count);
-    $('ul#notifications').prepend('<div class="notification" data-type="new"><li>' + data.notification + '</li><li>less than a minute ago</li></div>'); 
+    $('ul#notifications').prepend('<div class="notification" data-type="new"><li>' + data.notification + '</li><li class="datetime">less than a minute ago</li></div><hr />'); 
      
     switch(data.type) { 
       case 'edit-name': 
@@ -81,10 +81,10 @@ jQuery(document).ready(function() {
       for (var i = 0; i < notifications.length; i++) { 
         var notification = notifications[i]
         if ($(notification).attr('data-type') == 'new') { 
-          $(notification).css('background', 'blue'); 
+          $(notification).css('background-color', '#eef7fa'); 
           $(notification).attr('data-type', ''); 
         } else {
-          $(notification).css('background', 'none'); 
+          $(notification).css('background-color', 'none'); 
         } 
       } 
     link = window.location.pathname;
@@ -100,5 +100,6 @@ jQuery(document).ready(function() {
       } 
     }); 
   }); 
+
 
 }); 
