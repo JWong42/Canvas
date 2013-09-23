@@ -9,17 +9,23 @@
               <li id="notifications" class="dropdown">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown">Notifications <span id="notifications" class="badge badge-important"><%= @user.unread_feed.count if not @user.unread_feed.nil? and @user.unread_feed.count > 0 %></span></a>
                 <ul id="notifications" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                  <% @notifications.each do |feed| %>
-                    <% if not @user.unread_feed.nil? and @user.unread_feed.list.include?(feed.id) %>
-                      <div class="notification" data-type="new">
-                        <li><%= feed.content %></li> 
-                        <li class="datetime"><%= feed.created_at %></li> 
-                      </div>
-                    <% else %> 
-                      <div class="notification">
-                        <li><%= feed.content %></li> 
-                        <li class="datetime"><%= feed.created_at %></li> 
-                      </div>
+                  <% if @notifications.empty? %>
+                    <div id="empty">
+                      <h4>No Notifications</h4>
+                    </div>
+                  <% else %>
+                    <% @notifications.each do |feed| %>
+                      <% if not @user.unread_feed.nil? and @user.unread_feed.list.include?(feed.id) %>
+                        <div class="notification" data-type="new">
+                          <li><%= feed.content %></li> 
+                          <li class="datetime"><%= feed.created_at %></li> 
+                        </div>
+                      <% else %> 
+                        <div class="notification">
+                          <li><%= feed.content %></li> 
+                          <li class="datetime"><%= feed.created_at %></li> 
+                        </div>
+                      <% end %>
                     <% end %>
                   <% end %>
                 </ul>

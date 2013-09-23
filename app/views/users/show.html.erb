@@ -94,12 +94,16 @@
     <div class="feeds-main">
       <h3 class="feeds-header">Activity Feeds</h3>
       <div class="feeds">
-        <% @user_activities.each do |feed| %> 
-          <div class="feed">
-            <p class="feed"><%= feed.content %><p>
-            <p class="feed-time"><%= feed.created_at %><p>
-          </div> 
-          <hr />
+        <% if @user_activities.empty? %>
+          <p class="notice">No activity feeds had been created yet.</p>
+        <% else %>
+          <% @user_activities.each do |feed| %> 
+            <div class="feed">
+              <p class="feed"><%= feed.content %><p>
+              <p class="feed-time"><%= feed.created_at %><p>
+            </div> 
+            <hr />
+          <% end %> 
         <% end %> 
       </div>
     </div>
