@@ -1,10 +1,8 @@
 <footer class="footer"> 
-
   <div class="information">
     <div class="container">
       <div class="outro">
-        <div class="row">
-          <div class="span4"> 
+          <div id="left" class="span4"> 
             <h4><span>// </span>Information</h4>
               <div class="links-left">
                 <ul>
@@ -21,7 +19,7 @@
                 </ul>
               </div>
           </div>
-          <div class="span4"> 
+          <div id="center" class="span4"> 
             <h4><span>// </span>Keep in touch</h4>
             <p>Get in touch with us for a question, a suggestion or just primarily to say hello! We also love hearing about your startup so give us a shout out if you can.</p>
             <div class="social-icons">
@@ -30,20 +28,18 @@
               <a href='#'><%= image_tag 'gplus.png', id: 'gp' %></a>
             </div>
           </div>
-          <div class="span4"> 
+          <div id="right" class="span4"> 
             <h4><span>// </span>Subscribe and get updates</h4>
             <p>Subscribe to our newsletter and get exclusive tips from experts on funding, marketing, and growing your business.<p>
-            <form>
+            <form id="subscribe">
               <input id="subscribe" type="text" value="Your Email"></input>
               <input type="submit" class="btn" id="subscribe-button" value="Subscribe"></input>
             </form>
           </div>
-        </div> 
       </div>
     </div>
   </div>
-
   <div class="copyright"> 
-    <p>&#169; 2012 JW, LLC. All Rights Reserved. Crafted with Love.<p>
+    <p>&#169; 2013 JW, LLC. All Rights Reserved. Crafted with Love.<p>
   </div>
 </footer> 

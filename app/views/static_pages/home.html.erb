@@ -13,103 +13,81 @@
     <div class="features"> 
       <h4 id="features-id"><span>//  </span>Discover Why Canvas is Awesome</h4>
       <div class="row">
-       <div class="features-left span4">
-         <table class="table">
-           <thead>
-             <tr>
-               <th><i class="icon-flag"></i>Rapid documentation</th>
-             </tr> 
-           </thead>
-           <tbody>
-             <tr> 
-               <td>Business plans are long, time consuming to write and hardly anyone likes to read them. Instead use a one page business model canvas to rapidly outline the essential parts of a business and formulate a quality plan.</td> 
-             </tr> 
-           </tbody> 
-         </table>
-         <table class="table">
-           <thead>
-             <tr>
-               <th><i class="icon-check"></i>Hypothesis Testing</th>
-             </tr> 
-           </thead>
-           <tbody>
-             <tr> 
-               <td>Validate or invalidate each business hypothesis and quickly iterate after recognizing flaws in the model.</td> 
-             </tr> 
-           </tbody> 
-         </table>
+        <div id="features-left" class="span4">
+          <div class="top">
+            <div class="icon"><i class="icon-flag icon-2x"></i></div>
+            <h4>Rapid Documentation</h4>
+            <p>Business plans are long, time consuming to write and hardly anyone likes to read them. Instead use a one page business model canvas to rapidly outline the essential parts of a business and formulate a quality plan.</p> 
+          </div>
+          <div class="bottom">
+            <div class="icon"><i class="icon-check icon-2x"></i></div>
+            <h4>Hypothesis Testing</h4>
+            <p>Validate or invalidate each business hypothesis and quickly iterate after recognizing flaws in the model.</p> 
+          </div>
         </div>
-        <div class="features-right span4">
-          <table class="table">
-            <thead>
-              <tr>
-                <th><i class="icon-list-alt"></i>Simplified Planning Process</th>
-              </tr> 
-            </thead>
-            <tbody>
-              <tr> 
-                <td>The essence of your business is narrowed down to 9 main components which can be used to quickly track and iterate your model. Focus on these essential parts to see whether you can form a profitable enterprise that is sustainable.</td> 
-              </tr> 
-            </tbody> 
-          </table>
-          <table class="table">
-            <thead>
-              <tr>
-                <th><i class="icon-retweet"></i>Collaborative Planning</th> 
-              </tr> 
-            </thead>
-            <tbody>
-              <tr> 
-                <td>Share and collaborate with any co-founders, advisers and investors in real time to discuss ideas, eliminate flaws in the model and be on the same page to execute business goals.</td> 
-              </tr> 
-            </tbody> 
-          </table>
+        <div id="features-center" class="span4">
+          <div class="top">
+            <div class="icon"><i class="icon-flag icon-2x"></i></div>
+            <h4>Rapid documentation</h4>
+            <p>Business plans are long, time consuming to write and hardly anyone likes to read them. Instead use a one page business model canvas to rapidly outline the essential parts of a business and formulate a quality plan.</p> 
+          </div>
+          <div class="bottom">
+            <div class="icon"><i class="icon-check icon-2x" ></i></div>
+            <h4>Hypothesis Testing</h4>
+            <p>Validate or invalidate each business hypothesis and quickly iterate after recognizing flaws in the model.</p> 
+          </div>
+        </div>
+        <div id="features-right" class="span4">
+          <div class="top">
+            <div class="icon"><i class="icon-list-alt icon-2x"></i></div>
+            <h4>Simplified Planning Process</h4>
+            <p>The essence of your business is narrowed down to 9 main components which can be used to quickly track and iterate your model. Focus on these essential parts to see whether you can form a profitable enterprise that is sustainable.</p> 
+          </div>
+          <div class="bottom">
+            <div class="icon"><i class="icon-retweet icon-2x"></i></div>
+            <h4>Collaborative Planning</h4>
+            <p>Share and collaborate with any co-founders, advisers and investors in real time to discuss ideas, eliminate flaws in the model and be on the same page to execute business goals.</p> 
+          </div>
         </div>  
       </div> <!-- row --> 
     </div> <!-- features span8 --> 
-    <div class="testimonials span4"> 
+    <div class="testimonials"> 
       <h4><span>//  </span>Testimonials</h4> 
       <div class="row">
         <div class="span4">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>
-                  <div class="pic">
-                    <%= image_tag "ao.jpg", id: "ao" %> 
-                  </div>
-                  <div class="testimonial">
-                    <p id="name">Alex O</p>
-                    <p id="recommendation">Recommendation</p>
-                  </div>
-                </th>
-              </tr> 
-            </thead>
-            <tbody>
-              <tr> 
-                <td>
-                  <div class="pic">
-                    <%= image_tag "mz.jpg", id: "mz" %> 
-                  </div>
-                  <div class="testimonial">
-                    <p id="name">Mark Z</p>
-                    <p id="recommendation">Recommendation</p>
-                  </div>
-                </td> 
-              </tr> 
-              <tr> 
-                <td>            
-                  <div class="pic">
-                    <%= image_tag "sj.jpg", id: "sj" %> 
-                  </div>
-                  <div class="testimonial">
-                    <p id="name">Steve J</p>
-                    <p id="recommendation">Recommendation</p>
-                  </div>
-                </td>
-              </tr> 
-            </tbody> 
-          </table>
+          <blockquote>
+            <p id="recommendation">"Recommendation"</p>
+            <div class="recommender">
+              <div class="pic">
+                <%= image_tag "ao.jpg", id: "ao" %> 
+              </div>
+              <p class="name">Alex O</p>
+            </div>
+          </blockquote>
+        </div>
+        <div class="span4">
+          <blockquote>
+            <p id="recommendation">"Recommendation"</p>
+            <div class="recommender">
+              <div class="pic">
+                <%= image_tag "sj.jpg", id: "sj" %> 
+              </div>
+              <p class="name">Steve J</p>
+            </div>
+          </blockquote>
+        </div>
+        <div class="span4">
+          <blockquote>
+            <p id="recommendation">"Recommendation"</p>
+            <div class="recommender">
+              <div class="pic">
+                <%= image_tag "mz.jpg", id: "mz" %> 
+              </div>
+              <div class="testimonial">
+                <p class="name">Mark Z</p>
+              </div>
+            </div>
+          </blockquote>
         </div>
       </div>
     </div>  <!-- testimonials --> 
