@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
     } 
     count += 1;
     $('span#notifications').text(count);
-    $('ul#notifications').prepend('<div class="notification" data-type="new"><li>' + data.notification + '</li><li class="datetime">less than a minute ago</li></div><hr />'); 
+    $('ul#notifications').prepend('<div class="notification" data-type="new"><li>' + data.notification + '</li><li class="datetime">less than a minute ago</li></div>'); 
      
     switch(data.type) { 
       case 'edit-name': 
@@ -84,7 +84,7 @@ jQuery(document).ready(function() {
           $(notification).css('background-color', '#eef7fa'); 
           $(notification).attr('data-type', ''); 
         } else {
-          $(notification).css('background-color', 'none'); 
+          $(notification).css('background-color', ''); 
         } 
       } 
     link = window.location.pathname;
