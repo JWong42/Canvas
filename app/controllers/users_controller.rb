@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new 
+    @notifications = get_notifications(@user)
   end 
 
   def create

@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
 
   def new 
-
+    if signed_in?
+      user = current_user
+      @notifications = get_notifications(user)
+    end 
   end 
 
   def create
