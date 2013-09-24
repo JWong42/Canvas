@@ -47,7 +47,7 @@ div#modalCollaborators {
   min-height: 450px; 
 
   div#collaborators { 
-    height: 300px;
+    max-height: 300px;
     overflow: auto; 
 
     div#collaborator {
