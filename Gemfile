@@ -19,16 +19,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '2.3.0'
 gem 'jquery-cookie-rails'
 
-gem 'pg', '0.15.1'
-
-#group :development, :test do 
+group :development, :test do 
   #gem 'sqlite3'
-#end 
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end 
 
-#group :production do 
-  #gem 'pg', '0.12.2'
-#end 
-
+gem 'pg', '0.15.1'
 gem 'puma'
 gem 'redis' 
 gem 'sidekiq'

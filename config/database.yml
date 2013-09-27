@@ -21,7 +21,7 @@ development:
   #database: db/test.sqlite3
   #pool: 5
   #timeout: 5000
-test:   
+test: &test
   adapter: postgresql
   encoding: unicode
   database: canvas_test
@@ -38,3 +38,6 @@ production:
   pool: 5 
   username: 
   password:
+
+cucumber:
+  <<: *test
