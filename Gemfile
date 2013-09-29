@@ -4,7 +4,7 @@ gem 'rails', '4.0.0'
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,9 +21,14 @@ gem 'jquery-cookie-rails'
 
 group :development, :test do 
   #gem 'sqlite3'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
+  gem 'rspec-rails'
 end 
+
+group :test do 
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+end
 
 gem 'pg', '0.15.1'
 gem 'puma'
