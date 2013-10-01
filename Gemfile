@@ -22,12 +22,14 @@ gem 'jquery-cookie-rails'
 group :development, :test do 
   #gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end 
 
 group :test do 
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'libnotify'
 end
 
 gem 'pg', '0.15.1'
