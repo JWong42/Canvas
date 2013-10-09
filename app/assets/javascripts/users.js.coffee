@@ -48,6 +48,7 @@ jQuery ($) ->
                 </div> 
               </div>
             ")
+            $('div.feed p.notice').remove()
             $('div.feeds').prepend("
               <div class='feed'>
                 <p class='feed'>#{data.activity}</p>
@@ -83,6 +84,7 @@ jQuery ($) ->
           success: (data) => 
             $(@).closest('div.canvas').attr('data-name', data.name)
             $(item).html("<a href='#{link}'>#{data.name}</a>")
+            $('div.feeds p.notice').remove()
             $('div.feeds').prepend("
               <div class='feed'>
                 <p class='feed'>#{data.activity}</p>
@@ -115,8 +117,10 @@ jQuery ($) ->
         url: link
         type: "DELETE"
         success: (data) => 
+          console.log(data)
           canvas = $(@).closest('div.canvas')
-          $(canvas).hide()
+          $(canvas).remove()
+          $('div.feeds p.notice').remove()
           $('div.feeds').prepend("
             <div class='feed'>
               <p class='feed'>#{data.activity}</p>
@@ -124,6 +128,7 @@ jQuery ($) ->
             </div>
             <hr />
           ")
+          console.log(data.count)
           if data.count is 0 
             $('div.canvases').prepend('<p class="notice">There are no existing canvases owned by you.  Create one now to get started.</p>')
     'a.delete'
@@ -191,6 +196,7 @@ jQuery ($) ->
           else 
             $('p#invite-error').text("") 
 
+            $('div.feeds p.notice').remove()
             $('div.feeds').prepend("
               <div class='feed'>
                 <p class='feed'>#{data.invite.activity}</p>
@@ -272,7 +278,7 @@ jQuery ($) ->
 
           # if there is a no existing canvas notice, remove it 
           notice = $('div.canvases').find('p.notice')[0]
-          $('p.notice').remove() if notice 
+          $('div.canvases p.notice').remove() if notice 
 
           # update the number of invites still need to be accepted or declined - the div invites-show part 
           # hide the modal invites link if the count reaches 0
@@ -282,6 +288,7 @@ jQuery ($) ->
           else 
               $('div#invites-show > a').text("#{data.count} new shared canvas invitation")
 
+          $('div.feeds p.notice').remove()
           $('div.feeds').prepend("
             <div class='feed'>
               <p class='feed'>#{data.activity}</p>
