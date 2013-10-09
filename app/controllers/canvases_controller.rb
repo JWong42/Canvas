@@ -1,7 +1,7 @@
 class CanvasesController < ApplicationController
 
   before_action :signed_in_user
-  #before_action :correct_user  
+  before_action :correct_canvas, only: [:show, :update, :destroy]
 
   def create
     @canvas = current_user.canvases.create(params[:canvas])
@@ -38,14 +38,21 @@ class CanvasesController < ApplicationController
 
   def destroy
     @canvas = Canvas.find(params[:id])
-    canvas_count = current_user.canvases.count
     content = "#{current_user.first_name} #{current_user.last_name} deleted #{@canvas.name}."
     results = handle_feed(content, @canvas, current_user)
+    @canvas.destroy
+    canvas_count = current_user.canvases.count
     data = { id: @canvas.id, count: canvas_count, notification: content, emails: results["emails"], type: 'delete-canvas' }.to_json
     redis = Redis.new
     redis.publish('feeds', data)
-    @canvas.destroy
     render json: { text: 'ok', count: canvas_count, activity: content } 
   end 
+
+  private 
+
+  def correct_canvas
+    canvas = Canvas.find(params[:id])
+    redirect_to root_path unless current_user.canvases.include?(canvas)
+  end
 
 end
