@@ -1,3 +1,3 @@
-Canvas is intended to serve as a real time business model generation tool to be used with collaborators. 
+Canvas is intended to serve as a real-time business model generation tool to be used with collaborators. 
 
-Demo - http://rails-canvas.herokuapp.com/
+It implements Rails 4.0.0 live streaming coupled with redis for real-time feeds and updates.
