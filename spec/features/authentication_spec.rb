@@ -2,9 +2,6 @@ require 'spec_helper'
 
 # To Do 
 
-# Sign up - valid and invalid
-# Update profile - valid and invalid
-# Incorrect user trying to access other pages - authorization
 # Dashboard functionality
 # Canvas functionality - add item, change label and delete item
 # Invite collaborator, accept invite, decline invite
